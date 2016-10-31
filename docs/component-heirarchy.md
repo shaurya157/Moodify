@@ -39,7 +39,7 @@
 
 **PlaylistContainer**
  - FollowedPlaylistContainer
-    + PlaylistIndex
+    + PlaylistIndexItem
       + PlayButton
       + SongTools (remove song, play song)
     + PlayPlaylistButton
