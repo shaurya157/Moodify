@@ -1,71 +1,67 @@
-Component Hierarchy
+# Component Heirarchy
 
-AuthFormContainer
+## Login/Signup Page ##
 
-AuthForm
-HomeContainer
+**LoginDisplayContainer**
+  + FeatureContainer
+  + ScreenshotContainer
 
-Home
-Sidebar
-NotesContainer
+**AuthFormContainer**
+ - SignupForm
+ - SigninForm
 
-NotesHeader
-NoteIndex
-NotebookContainer
+## App level ##
 
-NotebookHeader
-NoteIndex
-SearchResultsContainer
+**Home Page**
+ - SidebarContainer
+    + SidebarIndex
 
-Search
-NoteIndex
-TagContainer
+ - BrowseContainer
+    + SongRecommendationContainer
+    + PlaylistRecommendationContainer
 
-NotebookHeader
-NoteIndex
-NoteIndex
+##Browse##
+ 
 
-NoteIndexItem
-NoteDetail
-NoteTools
-NotebookSearch
-Tags
-Tag
-Note
-NewNoteContainer
+##Search##
 
-NewNote
-RTETools
-NewNoteButton
-Search
+##Playlist
 
-NewNotebook
+##Follow
 
-NewNotebook
-NewTag
+##Your Tracks
 
-NewTag
-NotebookSearch
+##Account / View User
 
-AutoSearch
-AutoSearchResults
-TagsSearch
+##Playing Tracks
 
-AutoSearch
-AutoSearchResults
-Routes
+**PlayBarContainer**
+ - PlayBar
+   + CurrentTrackDisplay
+   + CurrentTrackControlsContainer
+   + CurrentTrackProgressBarContainer
 
-Path	Component
-"/sign-up"	"AuthFormContainer"
-"/sign-in"	"AuthFormContainer"
-"/home"	"HomeContainer"
-"/home/note/:noteId"	"NotesContainer"
-"/home/notebook/:notebookId/note/:noteId"	"NotebookContainer"
-"/home/tag/:tagId/note/:notedId"	"TagContainer"
-"/home/search-results"	"SearchResultsContainer"
-"/new-note"	"NewNoteContainer"
-"/search"	"Search"
-"/new-notebook"	"NewNotebook"
-"/new-tag"	"NewTag"
-"/tag-search"	"TagSearch"
-"/notebook-search"	"NotebookSearch"
+**CurrentTrackControlsContainer**
+ - PlayButton
+ - ForwardButton
+ - BackButton
+
+**CurrentTrackProgressBarContainer**
+  - CurrentTrackProgressBar
+
+## Routes
+
+|Path   | Component   |
+|-------|-------------|
+| "/" | "SplashPage" |
+| "/browse/tracks" | "TracksIndex" |
+| "/browse/playlists" | "PlaylistsIndex" |
+| "/follow/friends" | "UserIndex" |
+| "/follow/find-friends" | "UserIndex" |
+| "/users/:user_id" | "UserDetailContainer" |
+| "/users/:user_id/edit" | "UserDetailsFormContainer" |
+| "/your-tracks" | "TracksIndex" |
+| "/your-tracks/new" | "TrackFormContainer" |
+| "/playlist/:playlist_id" | "PlaylistDetailContainer" |
+| "/playlist/:playlist_id/edit" | "PlaylistFormContainer" |
+| "/playlist/new" | "NewPlaylistFormContainer" |
