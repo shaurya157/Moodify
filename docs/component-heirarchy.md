@@ -1,6 +1,6 @@
 # Component Heirarchy
 
-## Login/Signup Page ##
+## Splash Page ##
 
 **LoginDisplayContainer**
   + FeatureIndex
@@ -12,29 +12,62 @@
 
 ## App level ##
 
-**Home Page**
+**HomePageContainer**
  - SidebarContainer
-    + SidebarIndex
+    + SidebarIndexItem
 
  - BrowseContainer
-    + SongRecommendationContainer
-    + PlaylistRecommendationContainer
-      + PlayListSongs
-
-##Player##
- -
-##Browse##
-
+    + SongIndexContainer
+      + SongIndexItem
+    + PlaylistsIndexContainer
+      PlaylistsIndexItem
+        + PlayListSongs
+          + SongTools
+          + AddPlaylistContainer
+          + FollowButton
 
 ##Search##
 
-##Playlist
+**SearchContainer**
+ - FormInputContainer
+ - SearchResultContainer
+    + SongSearch
+    + PlaylistSearch
+    + ProfileSearch
+
+##Playlist##
+
+**PlaylistContainer**
+ - FollowedPlaylistContainer
+    + PlaylistIndex
+      + PlayButton
+      + SongTools (remove song, play song)
+    + PlayPlaylistButton
+    + RemovePlaylistButton
+ - NewPlaylistContainer
+ - FollowedPeopleContainer
 
 ##Follow
 
-##Your Tracks
+ - FollowPeopleContainer
+    + FollowPeopleIndex
+      + FollowButton
+      + FollowPeopleIndexItem (Link to UserContainer?)
+
+(Might need to add a search bar to search for people to follow)
+
+##Liked Songs (Quick add to one playlist)##
+
+ - LikedSongsContainer
+    + PlayButtonContainer
+    + SongToolsContainer
 
 ##Account / View User
+
+**UserContainer**
+ - FollowedPlaylistContainer
+ - UserProfileContainer
+    + FollowButton
 
 ##Playing Tracks
 
@@ -57,14 +90,9 @@
 |Path   | Component   |
 |-------|-------------|
 | "/" | "SplashPage" |
-| "/browse/tracks" | "TracksIndex" |
-| "/browse/playlists" | "PlaylistsIndex" |
-| "/follow/friends" | "UserIndex" |
-| "/follow/find-friends" | "UserIndex" |
-| "/users/:user_id" | "UserDetailContainer" |
-| "/users/:user_id/edit" | "UserDetailsFormContainer" |
-| "/your-tracks" | "TracksIndex" |
-| "/your-tracks/new" | "TrackFormContainer" |
-| "/playlist/:playlist_id" | "PlaylistDetailContainer" |
-| "/playlist/:playlist_id/edit" | "PlaylistFormContainer" |
-| "/playlist/new" | "NewPlaylistFormContainer" |
+| "/browse/songs" | "SongsIndexContainer" |
+| "/browse/playlists" | "PlaylistsIndexContainer" |
+| "/follow/" | "FollowPeopleContainer" |
+| "/users/:user_id" | "UserContainer" |
+| "/playlist" | "PlaylistContainer" |
+| "/users/:user_id" | "UserContainer" |
