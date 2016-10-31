@@ -11,18 +11,20 @@
     signIn: {errors: []},
     playlist: {},
   },
-  //information about the currently playing track
-  currentTrack: {
-    track:  {
+  //information about the currently playing song
+  currentsong: {
+    song:  {
       id: 3
       title: "Redux",
       userId: 3,
       description: "description",
+      album: "Lorem",
       coverUrl: "http://path/to/cover",
       audioUrl: "http://path/to/audio",
+      duration: "4:04"
     }
-    trackQueue: [track1, track2, track3],
-    previousTracks: [track4, track5],
+    songQueue: [song1, song2, song3],
+    previoussongs: [song4, song5],
     playing: true
   },
   playlists: {
@@ -30,26 +32,30 @@
     followedPlaylists: {
       1:  {
         id: 1
-        title: "Redux"
+        title: "Redux",
+        userId: 3,
         description: "description",
         follows: true,
         coverUrl: "http:/path/to/cover",
       }
     },
-    //vieweing a playlist details page (include all tracks)
+
+    //vieweing a playlist details page (include all songs)
     playlistDetail: {
       id: 1,
       title: "Redux",
       description: "lorem ipsum description",
       follows: true,
       userId: 4,
-      tracks: [
+      songs: [
          1:  {
             id: 1,
             title: "Redux",
             description: "description",
             coverUrl: "http://path/to/cover",
             audioUrl: "http://path/to/audio",
+            duration: "4:40",
+            album: "Lorem"
           }
       ]
     },
@@ -71,6 +77,7 @@
           id: 3
           username: "username",
           bio: "bio",
+          user_id: 3,
           follows: true
           profileImageUrl: "http:/path/to/cover"
       },
@@ -78,6 +85,7 @@
         1: {
             id: 1
             title: "Redux",
+            userId: 3,
             follows: false
             description: "description",
             coverUrl: "http:/path/to/cover"
