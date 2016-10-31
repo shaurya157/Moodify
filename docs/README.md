@@ -72,7 +72,7 @@ Some bonus features that Moodify may also include:
 - [ ] Seed database with a small amount of test data
 - [ ] CRUD API for songs (`SongsController`)
 - [ ] JBuilder views for songs
-- Song components and respective Redux loops
+- [ ] Song components and respective Redux loops
 - [ ] Style songs components
 - [ ] Seed songs
 
@@ -86,7 +86,7 @@ Some bonus features that Moodify may also include:
 - [ ] JBuilder views for playlists
 - [ ] Fetching playlists for the current user
 - [ ] Adding and removing songs from playlists
-- Playlist components and respective Redux loops
+- [ ] Playlist components and respective Redux loops
 - [ ] Style playlist components
 - [ ] Seed playlists
 - [ ] `PlaylistFollow` model
@@ -112,5 +112,5 @@ Some bonus features that Moodify may also include:
 
 - [ ]`UserFollow` model
 - [ ] Create destroy API for follows (`UsersController`)
-- Related components
-- Styling for components
+- [ ] Related components
+- [ ] Styling for components
