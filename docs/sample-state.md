@@ -30,8 +30,7 @@
     followedPlaylists: {
       1:  {
         id: 1
-        title: "Redux",
-        userId: 3,
+        title: "Redux"
         description: "description",
         follows: true,
         coverUrl: "http:/path/to/cover",
@@ -48,7 +47,6 @@
          1:  {
             id: 1,
             title: "Redux",
-            user_id: 3,
             description: "description",
             coverUrl: "http://path/to/cover",
             audioUrl: "http://path/to/audio",
@@ -63,7 +61,6 @@
           id: 3,
           username: "username",
           bio: "bio",
-          userId: 3,
           follows: true
           profileImageUrl: "http:/path/to/cover"
         }
@@ -74,7 +71,6 @@
           id: 3
           username: "username",
           bio: "bio",
-          user_id: 3,
           follows: true
           profileImageUrl: "http:/path/to/cover"
       },
@@ -82,7 +78,6 @@
         1: {
             id: 1
             title: "Redux",
-            userId: 3,
             follows: false
             description: "description",
             coverUrl: "http:/path/to/cover"
