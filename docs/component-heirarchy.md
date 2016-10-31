@@ -69,21 +69,21 @@
  - UserProfileContainer
     + FollowButton
 
-##Playing Tracks
+##Playing Songs
 
 **PlayBarContainer**
  - PlayBar
-   + CurrentTrackDisplay
-   + CurrentTrackControlsContainer
-   + CurrentTrackProgressBarContainer
+   + CurrentSongDisplay
+   + CurrentSongControlsContainer
+   + CurrentSongProgressBarContainer
 
-**CurrentTrackControlsContainer**
+**CurrentSongControlsContainer**
  - PlayButton
  - ForwardButton
  - BackButton
 
-**CurrentTrackProgressBarContainer**
-  - CurrentTrackProgressBar
+**CurrentSongProgressBarContainer**
+  - CurrentSongProgressBar
 
 ## Routes
 
