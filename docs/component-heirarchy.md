@@ -3,8 +3,8 @@
 ## Login/Signup Page ##
 
 **LoginDisplayContainer**
-  + FeatureContainer
-  + ScreenshotContainer
+  + FeatureIndex
+  + ScreenshotIndex
 
 **AuthFormContainer**
  - SignupForm
@@ -19,9 +19,12 @@
  - BrowseContainer
     + SongRecommendationContainer
     + PlaylistRecommendationContainer
+      + PlayListSongs
 
+##Player##
+ -
 ##Browse##
- 
+
 
 ##Search##
 
