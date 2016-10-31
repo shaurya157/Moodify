@@ -1,6 +1,7 @@
 # Moodify
 
 
+
 ## Minimum Viable Product
 
 Moodify is an audio-streaming web application inspired by Spotify: built with a React/Redux front-end and powered by a Rails backend.  By the end of Week 9, this app will, at a minimum, support the following functionality with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
