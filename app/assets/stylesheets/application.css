@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+/*CSS RESET*/
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p,
+ a, em, img, strong, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+  background-color: transparent;
+  text-decoration: none;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section {
+ 	display: block;
+ }
+ body {
+ 	line-height: 1;
+ }
+ ol, ul {
+ 	list-style: none;
+ }
+
+ /*Homepage styling*/
+
+ body {
+     display: flex;
+     background-image: url(splash_background.jpg);
+     font-family: 'Roboto', sans-serif;
+     /* color: #874b4b; */
+     height: 100%;
+     overflow: hidden;
+ }
+
+ input {
+   border: none;
+   border-bottom: 1px solid black;
+ }
