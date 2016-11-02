@@ -5,12 +5,12 @@ export const authModalStyle = {
    left            : 0,
    right           : 0,
    bottom          : 0,
-   backgroundColor : 'rgba(255, 255, 255, 0.75)',
+   backgroundColor : 'rgba(30, 30, 30, 0.75)',
    zIndex          : 50
  },
  content : {
    position        : 'fixed',
-   top             : '80px',
+   top             : '150px',
    width           : '300px',
    height          : '300px',
    borderRadius    : '20px',

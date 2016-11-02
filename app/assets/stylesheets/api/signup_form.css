@@ -18,14 +18,14 @@
 
  .signup-form-header {
    width: 100%;
-   border-bottom: 1px solid #CCCCCC;
+   border-bottom: 1px solid #8B0000;
    display: flex;
    justify-content: center;
    padding-bottom: 10px;
  }
  .signup-form h1{
    font-size: 20px;
-   color: #699700;
+   color: #8B0000;
  }
 
  .signup-form form {

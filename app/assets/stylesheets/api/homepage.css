@@ -41,10 +41,11 @@
   -webkit-border-radius: 4px;
  }
 
- .introduction button :hover{
+ .login-buttons :hover{
+   -webkit-transition-duration: 0.4s; /* Safari */
+   transition-duration: 0.4s;
    color: #8B0000;
    background-color: white;
-   transition-duration: 0.4s;
  }
 
 .homepage {
