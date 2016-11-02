@@ -34,27 +34,30 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    const link = this.props.formType === 'login' ? 'signup' : 'login';
+    const link = this.props.formType === 'login' ? 'Sign Up' : 'Login';
+    const header = this.props.formType === 'signup' ? 'Sign Up' : 'Login';
+
     const errors = this.props.errors.map(
       (error, idx) => <li key={idx} className='error'>{error}</li>);
+
     return (
-      <div className='form'>
-        <h1 className='formType'>{this.props.formType}</h1>
+      <div className='signup-form'>
+        <h1>{header}</h1>
         <form onSubmit={this.handleSubmit}>
-          Username
           <input type='text'
             value={this.state.username}
-            onChange={this.update('username')} />
+            onChange={this.update('username')}
+            placeholder='Username'/>
 
-          Password
           <input type='password'
             value={this.state.password}
-            onChange={this.update('password')} />
+            onChange={this.update('password')}
+            placeholder='Password'/>
 
           <input type='submit' value='Submit' />
         </form>
 
-        <Link to={`/${link}`}>{link}</Link>
+        <Link onClick={this.props.toggleForm}>{link}</Link>
 
         <ul className="login-errors">
           {errors}

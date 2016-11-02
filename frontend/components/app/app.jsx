@@ -1,5 +1,5 @@
 import React from 'react';
-// import {browserHistory} from 'react-router'
+import {withRouter} from 'react-router';
 
 class App extends React.Component {
   constructor(props){
@@ -7,23 +7,29 @@ class App extends React.Component {
     this.handlelogout = this.handlelogout.bind(this);
   }
 
+  componentWillReceiveProps(newProps){
+    if(!newProps.currentUser){
+      this.props.router.push('/');
+    }
+  }
+
   handlelogout(){
     this.props.logout();
-    this.props.router.push('/');
   }
 
   render (){
-    debugger;
     let logoutButton;
-    if(this.props.loggedIn){
+    if(this.props.currentUser){
       logoutButton = <button onClick={this.handlelogout}>Log out</button>;
     }
 
-    return (<div>
+    return (
+    <div>
       {this.props.children}
+      <h1>Welcome {this.props.currentUser.username}!</h1>
       {logoutButton}
     </div>);
   }
 }
 
-export default App;
+export default withRouter(App);

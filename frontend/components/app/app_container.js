@@ -4,7 +4,7 @@ import App from './app';
 
 
 const mapStateToProps = ({ session }) => ({
-  loggedIn: Boolean(session.currentUser),
+  currentUser: session.currentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({

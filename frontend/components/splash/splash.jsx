@@ -12,6 +12,7 @@ class Splash extends React.Component {
   constructor(props){
     super(props);
     this.state = {authModal: false, formType:''};
+    this.handleButtonIfLoggedIn = this.handleButtonIfLoggedIn.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
@@ -37,11 +38,25 @@ class Splash extends React.Component {
     }
   }
 
+  handleButtonIfLoggedIn(){
+    this.props.router.push('/app');
+  }
   render(){
+    let buttons;
+    if(!this.props.currentUser){
+      buttons = (
+        <div className='login-buttons'>
+          <button onClick={this.openModal.bind(this, 'login')}>Login!</button>
+          <button onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
+        </div>
+        );
+    } else {
+      buttons = <button onClick={this.handleButtonIfLoggedIn}>Explore! </button>;
+    }
     return (
       <main>
-        <button onClick={this.openModal.bind(this, 'login')}>Login!</button>
-        <button onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
+        <div className='overlay'></div>
+        {buttons}
 
         <Modal isOpen={this.state.authModal}
            onRequestClose={this.closeModal.bind(this)}
