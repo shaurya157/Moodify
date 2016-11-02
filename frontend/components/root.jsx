@@ -1,14 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
-import App from './app/app';
+import AppContainer from './app/app_container';
 import SplashContainer from './splash/splash_container';
 import SessionFormContainer from './session_form/session_form_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
     if (store.getState().session.currentUser) {
-      replace("/");
+      replace("/app");
     }
   };
 
@@ -21,13 +21,13 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path ='/' component={ SplashContainer } />
-        <Route path='/app' component={ App } >
+        <Route path ='/' component={ SplashContainer } onEnter={_redirectIfLoggedIn} >
+          <Route path='/signup' component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
+          <Route path='/login' component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         </Route>
+        <Route path='/app' component={ AppContainer } />
       </Router>
   </Provider>);
 };
 
 export default Root;
-// <Route path='/app/signup' component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
-// <Route path='/app/login' component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>

@@ -10,14 +10,14 @@ Moodify is an audio-streaming web application inspired by Spotify: built with a 
 - [ ] New account creation, login, and guest/demo login
 - [ ] Playlist creation, deletion, and updating
 - [ ] Following playlists
-- [ ] Radio option for random music streaming
 - [ ] Continuous audio streaming while navigating the site
 - [ ] Following other users
-- [ ] Searching for users, playlists and songs all in one place
 - [ ] Production README
 
 Some bonus features that Moodify may also include:
 
+- [ ] Searching for users, playlists and songs all in one place
+- [ ] Radio option for random music streaming
 - [ ] Play Queue
 - [ ] Radio option looks at the music you like and serves you music based on your likes
 - [ ] Music being filtered by Genres

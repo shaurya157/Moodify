@@ -54,9 +54,16 @@
      /* color: #874b4b; */
      height: 100%;
      overflow: hidden;
+     color: white;
  }
 
  input {
    border: none;
    border-bottom: 1px solid black;
+ }
+
+ .form {
+   display: flex;
+   flex-direction: column;
+   color: black;
  }

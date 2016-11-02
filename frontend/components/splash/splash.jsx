@@ -21,6 +21,7 @@ class Splash extends React.Component {
   }
 
   openModal(type){
+    this.props.clearErrors();
     this.setState({authModal: true, formType: type});
   }
 
@@ -40,6 +41,7 @@ class Splash extends React.Component {
     return (
       <main>
         <button onClick={this.openModal.bind(this, 'login')}>Login!</button>
+        <button onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
 
         <Modal isOpen={this.state.authModal}
            onRequestClose={this.closeModal.bind(this)}
