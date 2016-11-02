@@ -42,7 +42,10 @@ class SessionForm extends React.Component {
 
     return (
       <div className='signup-form'>
-        <h1>{header}</h1>
+        <div className='signup-form-header'>
+          <h1>{header}</h1>
+        </div>
+        
         <form onSubmit={this.handleSubmit}>
           <input type='text'
             value={this.state.username}

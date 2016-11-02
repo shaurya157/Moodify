@@ -54,9 +54,19 @@ class Splash extends React.Component {
       buttons = <button onClick={this.handleButtonIfLoggedIn}>Explore! </button>;
     }
     return (
-      <main>
-        <div className='overlay'></div>
-        {buttons}
+      <main className='overlay-main'>
+        // <div className='overlay'>
+        //   <img src={'assets/splash_background'}></img>
+        // </div>
+
+        <div className='introduction'>
+          <h1>Big title!</h1>
+          <h3>Small Description 1</h3>
+          <h3>Small Desription 2</h3>
+          <h3>Small Description 3</h3>
+          {buttons}
+        </div>
+
 
         <Modal isOpen={this.state.authModal}
            onRequestClose={this.closeModal.bind(this)}
