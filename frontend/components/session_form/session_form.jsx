@@ -37,7 +37,6 @@ class SessionForm extends React.Component {
     const link = this.props.formType === 'login' ? 'signup' : 'login';
     const errors = this.props.errors.map(
       (error, idx) => <li key={idx} className='error'>{error}</li>);
-
     return (
       <div className='form'>
         <h1 className='formType'>{this.props.formType}</h1>
