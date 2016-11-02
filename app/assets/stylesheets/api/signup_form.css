@@ -1,0 +1,36 @@
+
+ .form {
+   display: flex;
+   flex-direction: column;
+   color: black;
+ }
+
+
+ .signup-form {
+   color: black;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+   height: 200px;
+ }
+
+ .signup-form-header {
+   width: 100%;
+   border-bottom: 1px solid #CCCCCC;
+   display: flex;
+   justify-content: center;
+   padding-bottom: 10px;
+ }
+ .signup-form h1{
+   font-size: 20px;
+   color: #699700;
+ }
+
+ .signup-form form {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin: 10px;
+ }

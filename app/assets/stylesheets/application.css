@@ -15,35 +15,62 @@
  */
 
 /*CSS RESET*/
- html, body, div, span, applet, object, iframe,
- h1, h2, h3, h4, h5, h6, p,
- a, em, img, strong, ol, ul, li,
- fieldset, form, label, legend,
- table, caption, tbody, tfoot, thead, tr, th, td,
- article, aside, canvas, details, embed,
- figure, figcaption, footer, header, hgroup,
- menu, nav, output, ruby, section, summary,
- time, mark, audio, video {
- 	margin: 0;
- 	padding: 0;
- 	border: 0;
- 	font-size: 100%;
- 	font: inherit;
- 	vertical-align: baseline;
-  background-color: transparent;
-  text-decoration: none;
- }
- /* HTML5 display-role reset for older browsers */
- article, aside, details, figcaption, figure,
- footer, header, hgroup, menu, nav, section {
- 	display: block;
- }
- body {
- 	line-height: 1;
- }
- ol, ul {
- 	list-style: none;
- }
+/* PHASE 0: Reset */
+
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+ font: inherit;
+ color: inherit;
+ text-align: inherit;
+ text-decoration: inherit;
+ vertical-align: inherit;
+ box-sizing: inherit;
+ background: transparent;
+}
+
+ul {
+ list-style: none;
+}
+
+img {
+ display: block;
+ width: 100%;
+ height: auto;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+ /*
+ Get rid of native styling. Read more here:
+ http://css-tricks.com/almanac/properties/a/appearance/
+ */
+ -webkit-appearance: none;
+ -moz-appearance: none;
+}
+
+button,
+input[type="submit"] {
+ cursor: pointer;
+}
+
+/* Clearfix */
+
+.group:after {
+ content: "";
+ display: block;
+ clear: both;
+}
 
  /*Homepage styling*/
 
@@ -58,53 +85,6 @@
 
  input {
    border: none;
-   border-bottom: 1px solid black;
+   border-bottom: 1px solid #CCCCCC;
+   text-align: center;
  }
-
- .form {
-   display: flex;
-   flex-direction: column;
-   color: black;
- }
-
- .overlay {
-   z-index: -10;
-   min-height: 100%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-top: 0;
-left: 0;
-   background-image: url('splash_background.jpg');
- }
-
-button{
-  z-index: 1;
-}
- @media screen and (max-width: 1024px) { /* Specific to this particular image */
-  .overlay {
-    left: 50%;
-    margin-left: -512px;   /* 50% */
-  }
-}
-
-.signup-form {
-  color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.signup-form h1{
-  font-size: 20px;
-}
-
-.signup-form form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 10px;
-}
