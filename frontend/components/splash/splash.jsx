@@ -55,17 +55,14 @@ class Splash extends React.Component {
     }
     return (
       <main className='overlay-main'>
-        // <div className='overlay'>
-        //   <img src={'assets/splash_background'}></img>
-        // </div>
-
-        <div className='introduction'>
-          <h1>Big title!</h1>
-          <h3>Small Description 1</h3>
-          <h3>Small Desription 2</h3>
-          <h3>Small Description 3</h3>
-          {buttons}
+        <div className='overlay'>
+          <div className='introduction'>
+            <img className='homepage' src={'assets/logo.png'}></img>
+            <h1>Moodify</h1>
+            {buttons}
+          </div>
         </div>
+        <div className='hello'>Hello</div>
 
 
         <Modal isOpen={this.state.authModal}
