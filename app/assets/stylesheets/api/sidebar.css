@@ -44,3 +44,20 @@
   padding-top:10px;
   padding-bottom:10px;
 }
+
+@media screen and (max-height: 500px) {
+    .sidebar li img {
+      height: 20px;
+      width: 25%;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .sidebar-item p {
+      font-size: 80%;
+    }
+}
