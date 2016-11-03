@@ -9,8 +9,12 @@ class SessionForm extends React.Component {
         password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    if(this.props.demo){
+      this.startUsernameAnimation();
+    }
   }
-// Why is this component on update and not componentDidMount
+
   componentDidUpdate(){
     this.redirectIfLoggedIn();
   }
@@ -21,6 +25,42 @@ class SessionForm extends React.Component {
     }
   }
 
+  startUsernameAnimation(){
+    this.clearFields();
+
+    const demoName = 'DemoUser';
+    let usernameID = setInterval(() => {
+      document.getElementById('username').focus();
+      let currLength = this.state.username.length;
+
+      if(currLength < demoName.length){
+        this.setState({username: this.state.username + demoName.slice(currLength, currLength + 1)});
+      } else {
+        clearInterval(usernameID);
+        this.startPasswordAnimation();
+      }
+    }, 100);
+  }
+
+  startPasswordAnimation(){
+    const demoPassword = 'password';
+    let passwordID = setInterval(() => {
+      document.getElementById('password').focus();
+      let currLength = this.state.password.length;
+
+      if(currLength < demoPassword.length){
+        this.setState({password: this.state.password + demoPassword.slice(currLength, currLength + 1)});
+      } else{
+        clearInterval(passwordID);
+        this.props.processForm(this.state);
+      }
+    }, 100);
+  }
+
+  clearFields(){
+    this.setState({username: "", password: ""});
+  }
+
   handleSubmit(event){
     event.preventDefault();
     this.props.processForm(this.state);
@@ -29,7 +69,6 @@ class SessionForm extends React.Component {
   update(place){
     return (event) => {
       this.setState({[place]: event.target.value});
-      // might need to change this to currentTarget
     };
   }
 
@@ -45,20 +84,30 @@ class SessionForm extends React.Component {
         <div className='signup-form-header'>
           <h1>{header}</h1>
         </div>
-        
-        <form onSubmit={this.handleSubmit}>
+
+        <form onSubmit={this.handleSubmit} className='signup-input-form'>
           <input type='text'
+            id='username'
             value={this.state.username}
             onChange={this.update('username')}
-            placeholder='Username'/>
+            placeholder='Username'
+            className="signup-input"/>
 
           <input type='password'
+            id='password'
             value={this.state.password}
             onChange={this.update('password')}
-            placeholder='Password'/>
+            placeholder='Password'
+            className='signup-input'/>
 
-          <input type='submit' value='Submit' />
+          <button type='submit'
+            value='Submit'
+            className='signup-input-submit'>Submit</button>
         </form>
+
+        <div className='form-seperator'>
+          <hr /><p>or</p><hr />
+        </div>
 
         <Link onClick={this.props.toggleForm}>{link}</Link>
 

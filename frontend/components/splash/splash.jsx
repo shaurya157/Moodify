@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 class Splash extends React.Component {
   constructor(props){
     super(props);
+
+    this.openDemoModal = this.openDemoModal.bind(this);
     this.state = {authModal: false, formType:''};
     this.handleButtonIfLoggedIn = this.handleButtonIfLoggedIn.bind(this);
   }
@@ -21,16 +23,23 @@ class Splash extends React.Component {
     }
   }
 
-  openModal(type){
+  openModal(type, demo){
     this.props.clearErrors();
-    this.setState({authModal: true, formType: type});
+    this.setState({authModal: true, formType: type, demo: demo});
+  }
+
+  openDemoModal(){
+    this.props.clearErrors();
+    this.setState({authModal: true, formType: 'login', demo: true});
   }
 
   closeModal(){
-    this.setState({authModal: false});
+    this.setState({authModal: false, demo: false});
   }
 
   toggleForm(){
+    this.props.clearErrors();
+
     if(this.state.formType === 'signup'){
       this.setState({formType: 'login'});
     }else{
@@ -46,8 +55,9 @@ class Splash extends React.Component {
     if(!this.props.currentUser){
       buttons = (
         <div className='login-buttons'>
-          <button onClick={this.openModal.bind(this, 'login')}>Login!</button>
-          <button onClick={this.openModal.bind(this, 'signup')}>Sign up!</button>
+          <button onClick={this.openModal.bind(this, 'login', false)}>Login!</button>
+          <button onClick={this.openModal.bind(this, 'signup', false)}>Sign up!</button>
+          <button onClick={this.openModal.bind(this, 'login', true)}>Demo</button>
         </div>
         );
     } else {
@@ -72,6 +82,7 @@ class Splash extends React.Component {
          <SessionFormContainer formType={this.state.formType}
             closeModal={this.closeModal.bind(this)}
             toggleForm={this.toggleForm.bind(this)}
+            demo={this.state.demo}
           />
         </Modal>
       </main>
