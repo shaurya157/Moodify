@@ -47,20 +47,20 @@ Some bonus features that Moodify may also include:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-- [ ] New Rails project
-- [ ] `User` model/migration
-- [ ] Back end authentication (session/password)
-- [ ] `StaticPages` controller and root view
-- [ ] Webpack & react/redux modules
-- [ ] `APIUtil` to interact with the API
-- [ ] Redux cycle for front-end authentication
-- [ ] User signup/sign in components
-- [ ] UserDetail component for currentUser on account tab
+- [x] New Rails project
+- [x] `User` model/migration
+- [x] Back end authentication (session/password)
+- [x] `StaticPages` controller and root view
+- [x] Webpack & react/redux modules
+- [x] `APIUtil` to interact with the API
+- [x] Redux cycle for front-end authentication
+- [x] User signup/sign in components
+- [x] UserDetail component for currentUser on account tab
 - [ ] Display component for listing out features
 - [ ] Display component for rotating screenshots
-- [ ] Style signup/sign in components
-- [ ] Seed users
-- [ ] Fill out display components
+- [x] Style signup/sign in components
+- [x] Seed users
+- [x] Fill out display components
 - [ ] Review phase 1
 
 ### Phase 2: Songs Model, API, and components (2 days)
