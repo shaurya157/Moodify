@@ -16,6 +16,13 @@
     ga('send', 'pageview');
   </script>
 
+  <script type="text/javascript">
+    window.cloudinary_options = {
+      cloud_name = '<%= ENV['CLOUD_NAME'] %>',
+      upload_preset = '<%= ENV['UPLOAD_PRESET'] %>'
+    }
+  </script>
+
 </head>
 <body>
 
