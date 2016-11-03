@@ -19,7 +19,7 @@ artist      | string    | not null
 album      | string    | not null
 song_image_url   | string    |
 audio_url   | string    | not null
-song_duration      | string    | not null
+song_duration      | string    | 
 
 ## playlists
 column name | data type | details
