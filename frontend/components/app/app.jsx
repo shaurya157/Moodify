@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router';
+import SidebarContainer from '../sidebar/sidebar_container';
 
 class App extends React.Component {
   constructor(props){
@@ -26,9 +27,9 @@ class App extends React.Component {
 
     return (
     <div>
-      {this.props.children}
-      <h1>Welcome {this.props.currentUser.username}!</h1>
+      <SidebarContainer />
       {logoutButton}
+      {this.props.children}
     </div>);
   }
 }
