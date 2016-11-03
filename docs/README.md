@@ -56,12 +56,12 @@ Some bonus features that Moodify may also include:
 - [x] Redux cycle for front-end authentication
 - [x] User signup/sign in components
 - [x] UserDetail component for currentUser on account tab
-- [ ] Display component for listing out features
+- [x] Display component for listing out features
 - [ ] Display component for rotating screenshots
 - [x] Style signup/sign in components
 - [x] Seed users
 - [x] Fill out display components
-- [ ] Review phase 1
+- [x] Review phase 1
 
 ### Phase 2: Songs Model, API, and components (2 days)
 

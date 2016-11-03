@@ -20,7 +20,8 @@ class App extends React.Component {
   render (){
     let logoutButton;
     if(this.props.currentUser){
-      logoutButton = <button onClick={this.handlelogout}>Log out</button>;
+      logoutButton = <button onClick={this.handlelogout}
+                        className='logout-button'>Log out</button>;
     }
 
     return (
