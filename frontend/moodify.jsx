@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-// import Root from './components/root';
+import {songs} from './util/songs_api_util';
 import {login, logout, signup, clearErrors} from './actions/session_actions';
 // import {signup, login, logout} from './actions/session_actions';
 import Root from './components/root';
@@ -9,6 +9,11 @@ import Root from './components/root';
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   let store;
+  window.songs = songs;
+  const success = (data) => console.log(data);
+  const error = data => console.log(data);
+  window.success = success;
+  window.error = error;
 
   window.logout = logout;
   if(window.currentUser){
