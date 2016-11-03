@@ -4,14 +4,13 @@ import configureStore from './store/store';
 // import {fetchSongs} from './util/songs_api_util';
 // import {login, logout, signup, clearErrors} from './actions/session_actions';
 // import {signup, login, logout} from './actions/session_actions';
-import {receiveAllSongs, requestAllSongs} from './actions/song_actions';
+// import {receiveAllSongs, requestAllSongs} from './actions/song_actions';
 import Root from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   let store;
-  window.receiveAllSongs = receiveAllSongs;
-  window.requestAllSongs = requestAllSongs;
+
   if(window.currentUser){
     store = configureStore({session: {currentUser: window.currentUser}});
   } else {
