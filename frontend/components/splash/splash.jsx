@@ -57,7 +57,8 @@ class Splash extends React.Component {
         <div className='login-buttons'>
           <button onClick={this.openModal.bind(this, 'login', false)}>Login!</button>
           <button onClick={this.openModal.bind(this, 'signup', false)}>Sign up!</button>
-          <button onClick={this.openModal.bind(this, 'login', true)}>Demo</button>
+          <button onClick={this.openModal.bind(this, 'login', true)}
+            className='demo-user'>Demo</button>
         </div>
         );
     } else {
@@ -72,8 +73,6 @@ class Splash extends React.Component {
             {buttons}
           </div>
         </div>
-        <div className='hello'>Hello</div>
-
 
         <Modal isOpen={this.state.authModal}
            onRequestClose={this.closeModal.bind(this)}

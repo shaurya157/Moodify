@@ -11,13 +11,6 @@
    background-position: center;
  }
 
-.hello{
-  position:fixed;
-  bottom: 0;
-  background-color: red;
-  width: 100%;
-}
-
 .overlay {
   height: 100%;
   width: 100%;
@@ -77,16 +70,11 @@
   font-size: 20px;
 }
 
-/*.overlay-main {
-  width: 100%;
-  position: relative;
-}*/
+
 button{
   z-index: 1;
 }
- /*@media screen and (max-width: 1024px) {
-  .overlay {
-    left: 50%;
-    margin-left: -512px;
-  }
-}*/
+
+.demo-user {
+  display: inline-block;
+}
