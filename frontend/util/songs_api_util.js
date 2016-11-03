@@ -1,8 +1,7 @@
-export const songs = (success, error) => {
+export const fetchSongs = (success) => {
   $.ajax({
   method: 'GET',
   url: 'api/songs',
-  success,
-  error
+  success
   });
 };
