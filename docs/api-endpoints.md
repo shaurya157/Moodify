@@ -26,7 +26,7 @@
 
 ### Songs
 
-- `GET /api/Songs`
+- `GET /api/songs`
 
 ### Playlists
 

@@ -1,7 +1,6 @@
 class Api::SongsController < ApplicationController
-  def show
-  end
-
   def index
+    @songs = Song.all
+    render :index
   end
 end
