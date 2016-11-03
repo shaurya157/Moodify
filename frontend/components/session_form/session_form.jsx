@@ -16,11 +16,11 @@ class SessionForm extends React.Component {
   }
 
   componentDidUpdate(){
-    this.redirectIfLoggedIn();
+    this.redirectIfcurrentUser();
   }
 
-  redirectIfLoggedIn(){
-    if(this.props.loggedIn){
+  redirectIfcurrentUser(){
+    if(this.props.currentUser){
       this.props.router.push('/');
     }
   }

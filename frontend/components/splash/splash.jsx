@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
 import {withRouter, Link} from 'react-router';
 import {authModalStyle} from '../../util/modal_styles';
+import Footer from './footer';
 
 document.addEventListener('DOMContentLoaded', () => {
   Modal.setAppElement(document.body);
@@ -72,8 +73,12 @@ class Splash extends React.Component {
             <h1>Moodify</h1>
             {buttons}
           </div>
+          <div className='introduction2'>
+            Add cool info about app here
+          </div>
         </div>
 
+        <Footer />
         <Modal isOpen={this.state.authModal}
            onRequestClose={this.closeModal.bind(this)}
            style={authModalStyle}>
