@@ -4,6 +4,7 @@ import configureStore from './store/store';
 // import {fetchSongs} from './util/songs_api_util';
 // import {login, logout, signup, clearErrors} from './actions/session_actions';
 // import {signup, login, logout} from './actions/session_actions';
+import {addSongToQueue, deleteSongFromQueue, addPlaylistToQueue} from './actions/play_queue_actions';
 import {receiveAllSongs, requestAllSongs} from './actions/song_actions';
 import Root from './components/root';
 
@@ -17,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   window.store = store;
+  window.addSongToQueue = addSongToQueue;
+  window.deleteSongFromQueue = deleteSongFromQueue;
+  window.addPlaylistToQueue = addPlaylistToQueue;
   ReactDOM.render(<Root store={store}/>, root);
 });
 
