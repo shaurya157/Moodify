@@ -1,11 +1,10 @@
 .sidebar {
-  min-height: 595px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 90px;
-  z-index: 1000;
+  /* min-height: 595px; */
+  /* position: absolute; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  width: 100px;
   background-color: #1c1c1f;
 }
 
