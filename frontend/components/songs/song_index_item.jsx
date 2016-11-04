@@ -2,7 +2,14 @@ import React from 'react';
 
 const SongIndexItem = ({song}) => {
   return (
-    <p>{song.title}</p>
+    <div className='song-index-item'>
+      <img src={song.song_image_url} className='song-index-item-image'></img>
+      <div className='song-details'>
+        <span className='song-index-item-title'>{song.title}</span>
+        <span className='song-index-item-artist'>{song.artist}</span>
+        <span className='song-index-item-album'>{song.album}</span>
+      </div>
+    </div>
   );
 };
 

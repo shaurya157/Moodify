@@ -10,10 +10,13 @@ const SongIndex = ({songs, location}) => {
 
   if(location === 'browse'){
     return(
-      <div>
-        <ul>
-          {songList}
-        </ul>
+      <div className='recommended-songs'>
+        <div className='recommended-songs-header'>Recommended Songs</div>
+        <div className='recommended-songs-list'>
+          <ul>
+            {songList}
+          </ul>
+        </div>
       </div>
     );
   }
