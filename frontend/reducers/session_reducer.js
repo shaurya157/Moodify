@@ -6,22 +6,22 @@ const _defaultState = {
   errors: []
 };
 
-const SessionReducer = (state = _defaultState, action) => {
-  Object.freeze(state);
+const SessionReducer = (oldState = _defaultState, action) => {
+  Object.freeze(oldState);
 
   switch (action.type) {
     case CLEAR_ERRORS:
       return _defaultState;
     case RECEIVE_CURRENT_USER:
-      return merge({}, state, {currentUser: action.currentUser, errors: []});
+      return merge({}, oldState, {currentUser: action.currentUser, errors: []});
     case RECEIVE_ERRORS:
-    return merge({}, state, {
+    return merge({}, oldState, {
       errors: action.errors.responseJSON
     });
     case LOGOUT:
       return _defaultState;
     default:
-      return state;
+      return oldState;
   }
 };
 
