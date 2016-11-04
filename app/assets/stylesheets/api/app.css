@@ -1,24 +1,26 @@
-.logout-button {
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 16px;
-  margin: 10px;
-  width: 100px;
-  text-align: center;
-  vertical-align: middle;
-
-  background-color: #8B0000;
-  box-sizing: border-box;
-  -webkit-border-radius: 4px;
-}
-
- .logout-button :hover{
-   -webkit-transition-duration: 0.4s; /* Safari */
-   transition-duration: 0.4s;
-   color: #8B0000;
-   background-color: white;
+ .wrapper {
+   display: flex;
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   min-height: 595px;
+   min-width: 1080px;
+   overflow: hidden;
+   flex-direction: row;
+   justify-content: space-between;
  }
 
- h1 {
-   color: black;
+/*Place holder for player*/
+ .player {
+   display: inline-block;
+   padding: 4px 12px;
+   font-size: 16px;;
+   text-align: center;
+   vertical-align: middle;
+
+   background-color: #8B0000;
+   box-sizing: border-box;
+   -webkit-border-radius: 4px;
  }
