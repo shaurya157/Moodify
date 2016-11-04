@@ -1,0 +1,62 @@
+.recommended-songs {
+  height: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.recommended-songs-header {
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #222326;
+  width: 100%;
+}
+
+.recommended-songs ul {
+
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.recommended-songs-list {
+  padding-top: 20px;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+  background-color: #222326;
+  padding: 13px 8px 4px;
+}
+
+.song-index-item {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  background-color: #222326;
+  overflow: hidden;
+  width: auto;
+  min-height: 300px;
+}
+
+.song-index-item-image {
+  height: 200px;
+  width: auto;
+}
+
+.song-index-item-title {
+  font-weight: bold;
+}
+
+.song-index-item-artist {
+  color: #86878A;
+}
+
+.song-index-item-album {
+  color: #86878A;
+}
