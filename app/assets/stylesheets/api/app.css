@@ -11,32 +11,3 @@
    flex-direction: row;
    justify-content: space-between;
  }
-
-/*Place holder for player*/
- .player {
-   display: inline-block;
-   padding: 4px 12px;
-   font-size: 16px;;
-   text-align: center;
-   vertical-align: middle;
-
-   background-color: #8B0000;
-   box-sizing: border-box;
-   -webkit-border-radius: 4px;
- }
-
-
-
-
- .progress-bar{
-   content: "";
-   background: white;
-   height: 8px;
-   width: 100%;
-   margin-top: 4px;
- }
-
- .audio-progress{
-   background: blue;
-   height: 100%;
- }

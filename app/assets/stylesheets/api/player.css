@@ -1,0 +1,43 @@
+.player {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  align-items: center;
+  /* position: absolute; */
+  /* right: 0; */
+  /* top: 0; */
+  /* bottom: 0; */
+  overflow: hidden;
+  font-size: 16px;
+  /* align-content: center; */
+  width: 20%;
+  /* align-content: flex-start; */
+  background-color: #1C1C1F;
+  /* z-index: 1000; */
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.current-song-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%
+}
+
+.current-song-image {
+  min-height:190px;
+  width: 100%;
+}
+.progress-bar{
+  content: "";
+  background: white;
+  height: 8px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.audio-progress{
+  background: blue;
+  height: 100%;
+}
