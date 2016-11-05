@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+// import Playbar from './playbar';
 
 class SongPlayer extends React.Component {
   constructor(props){
     super(props);
+    this.state = {progress: 0};
     this.progress = 0;
     this.togglePlay = this.togglePlay.bind(this);
     this.startNextSong = this.startNextSong.bind(this);
@@ -20,19 +22,19 @@ class SongPlayer extends React.Component {
   }
 
   startNextSong(){
-    if(this.props.playqueue.length === 0){
-      this.props.pauseSong();
-    } else {
+    if(this.props.playqueue.length !== 0){
+      this.setState({progress: 0});
       this.props.goForward();
     }
   }
 
   startPreviousSong(){
+    this.setState({progress: 0});
     this.props.goBack();
   }
 
   updatePlaybar({played}){
-    this.progress = played * 100;
+    this.setState({progress: played * 100});
   }
 
   render () {
@@ -46,10 +48,10 @@ class SongPlayer extends React.Component {
 
         <div className='progress-bar'>
           <div className='audio-progress'
-            style={{width: `${document.documentElement.clientWidth*this.progress}%`}}>
+            style={{width: `${this.state.progress}%`}}>
           </div>
           <div className='progress-circle'
-            style={{left: `${document.documentElement.clientWidth*this.progress - 8}px`}}>
+            style={{left: `${this.state.progress - 8}px`}}>
           </div>
         </div>
 

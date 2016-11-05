@@ -44,9 +44,9 @@ const AudioReducer = (oldState = _defaultState, action) => {
         return merge(newState, {playing: true});
       }
     case GO_FORWARD:
-      if(oldState.playqueue.length > 0  && oldState.song.id){
+      if(oldState.playqueue.length > 0){
         newState.song = oldState.playqueue[0];
-        if(oldState.playqueue > 1){
+        if(oldState.playqueue.length > 1){
           newState.playqueue = oldState.playqueue.slice(1);
         } else {
           newState.playqueue = [];
@@ -57,7 +57,7 @@ const AudioReducer = (oldState = _defaultState, action) => {
         return oldState;
       }
     case GO_BACK:
-      if(oldState.playedSongs.length > 0 && oldState.song.id){
+      if(oldState.playedSongs.length > 0){
         newState.song = oldState.playedSongs[0];
         newState.playqueue.unshift(oldState.song);
         newState.playedSongs = oldState.playedSongs.slice(1);
