@@ -24,3 +24,19 @@
    box-sizing: border-box;
    -webkit-border-radius: 4px;
  }
+
+
+
+
+ .progress-bar{
+   content: "";
+   background: white;
+   height: 8px;
+   width: 100%;
+   margin-top: 4px;
+ }
+
+ .audio-progress{
+   background: blue;
+   height: 100%;
+ }
