@@ -4,7 +4,7 @@ import {deleteSongFromQueue,
         pauseSong,
         goForward,
         goBack} from '../../actions/audio_actions';
-import SongPlayer from './player';
+import SongPlayer from './song_player';
 
 
 const mapStateToProps = ({currentSong}) => ({

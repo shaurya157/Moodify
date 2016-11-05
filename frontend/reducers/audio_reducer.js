@@ -38,21 +38,22 @@ const AudioReducer = (oldState = _defaultState, action) => {
       newState.playqueue = oldState.playqueue.concat(action.playlist.songs);
       return newState;
     case PLAY_SONG:
-      return merge(newState, {song: action.song, playing: true});
+      if(action.song){
+        return merge(newState, {song: action.song, playing: true});
+      } else {
+        return merge(newState, {playing: true});
+      }
     case GO_FORWARD:
       if(oldState.playqueue.length > 0  && oldState.song.id){
         newState.song = oldState.playqueue[0];
         if(oldState.playqueue > 1){
           newState.playqueue = oldState.playqueue.slice(1);
         } else {
-          debugger;
           newState.playqueue = [];
         }
         newState.playedSongs = [...oldState.playedSongs, oldState.song];
-        debugger;
         return newState;
       } else {
-        console.log('no change');
         return oldState;
       }
     case GO_BACK:

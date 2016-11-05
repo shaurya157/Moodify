@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.goForward = goForward;
   window.goBack = goBack;
 
-  ReactDOM.render(<Root store={store}/>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
 
 // const success = (data) => console.log(data);
