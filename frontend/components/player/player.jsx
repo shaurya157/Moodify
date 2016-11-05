@@ -1,5 +1,6 @@
 import React from 'react';
 import SongPlayerContainer from './song_player_container';
+import PlayQueueContainer from './playqueue_container';
 
 class Player extends React.Component {
   constructor(props){
@@ -26,6 +27,7 @@ class Player extends React.Component {
             <div className='current-song-artist'>{song.artist}</div>
           </div>
           <SongPlayerContainer />
+          <PlayQueueContainer />
         </div>
       );
     } else {
