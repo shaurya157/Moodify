@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import {  } from '../../actions/session_actions';
 import Player from './player';
 
 
