@@ -2,7 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import SidebarContainer from '../sidebar/sidebar_container';
 import BrowseContainer from '../browse/browse_container';
-
+import PlayerContainer from '../player/player_container';
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -30,7 +30,7 @@ class App extends React.Component {
     <div className='wrapper'>
       <SidebarContainer />
       <BrowseContainer />
-      <div className='player'>Player here!</div>
+      <PlayerContainer />
       {this.props.children}
     </div>);
   }

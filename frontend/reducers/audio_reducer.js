@@ -34,38 +34,45 @@ const AudioReducer = (oldState = _defaultState, action) => {
       });
       newState.playqueue = newPlayqueue;
       return newState;
-    // case ADD_PLAYLIST_TO_QUEUE:
-    //   newPlayqueue = oldState.playqueue.concat(action.playlist);
-    //   return merge(newState, { playqueue: newPlayqueue });
-    // TODO: after writing playlists, finish this
+    case ADD_PLAYLIST_TO_QUEUE:
+      newState.playqueue = oldState.playqueue.concat(action.playlist.songs);
+      return newState;
     case PLAY_SONG:
       return merge(newState, {song: action.song, playing: true});
     case GO_FORWARD:
-      if(oldState.playqueue.length > 0 && oldState.song.id){
+      if(oldState.playqueue.length > 0  && oldState.song.id){
         newState.song = oldState.playqueue[0];
-        newState.playqueue = oldState.playqueue.slice(1);
-        newState.playedSongs = [...oldState.playedSongs, oldState.track];
+        if(oldState.playqueue > 1){
+          newState.playqueue = oldState.playqueue.slice(1);
+        } else {
+          debugger;
+          newState.playqueue = [];
+        }
+        newState.playedSongs = [...oldState.playedSongs, oldState.song];
+        debugger;
         return newState;
       } else {
+        console.log('no change');
         return oldState;
       }
     case GO_BACK:
       if(oldState.playedSongs.length > 0 && oldState.song.id){
         newState.song = oldState.playedSongs[0];
-        let newQueue = oldState.playqueue;
-        newQueue = newQueue.concat(oldState.playqueue[0]);
-        newState.playqueue = newQueue;
+        newState.playqueue.unshift(oldState.song);
         newState.playedSongs = oldState.playedSongs.slice(1);
+
         return newState;
       } else {
         return oldState;
       }
     case PAUSE_SONG:
       return merge(newState, {playing: false});
-    // case PLAY_PLAYLIST:
-    //   return merge(_defaultState,
-    //     {playqueue: action.playlist})
-    // TODO: after writing playlists, do this
+    case PLAY_PLAYLIST:
+      let playlist = action.playlist;
+      return({playqueue: playlist.songs.slice(1),
+        playing: true,
+        song: playlist.songs[0]
+      });
     default:
       return _defaultState;
   }
