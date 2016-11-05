@@ -20,7 +20,7 @@ class SongPlayer extends React.Component {
   }
 
   startNextSong(){
-    if(this.props.playqueue.length === 1){
+    if(this.props.playqueue.length === 0){
       this.props.pauseSong();
     } else {
       this.props.goForward();
@@ -37,11 +37,10 @@ class SongPlayer extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='song-player'>
         <ReactPlayer
         url={this.props.song.audio_url}
         playing={this.props.playing} hidden={true}
-        className='song-player'
         onEnded={this.startNextSong}
         onProgress={this.updatePlaybar}/>
 
