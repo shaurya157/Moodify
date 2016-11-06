@@ -23,8 +23,10 @@ class Player extends React.Component {
             <div className='current-song-image'
               style={divStyle}>
             </div>
-            <div className='current-song-title'>{song.title}</div>
-            <div className='current-song-artist'>{song.artist}</div>
+            <div className='current-song-info'>
+              <div className='current-song-title'>{song.title}</div>
+              <div className='current-song-artist'>{song.artist}</div>
+            </div>
           </div>
           <SongPlayerContainer />
           <PlayQueueContainer />

@@ -1,10 +1,10 @@
 import React from 'react';
-import SongIndexItem from './song_index_item';
+import SongIndexItemContainer from './song_index_item_container';
 
 const SongIndex = ({songs, location}) => {
   const songList = songs.map((song, idx) => (
     <li key={idx}>
-      <SongIndexItem song={song}/>
+      <SongIndexItemContainer song={song} />
     </li>
   ));
 

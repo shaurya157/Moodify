@@ -7,9 +7,9 @@ class PlayQueue extends React.Component {
     this.deleteSong = this.deleteSong.bind(this);
   }
 
-  playSong(){
+  playSong(song){
     return (event) => {
-      this.props.playSong(event.target.value);
+      this.props.playSong(song);
     };
   }
 
@@ -21,11 +21,9 @@ class PlayQueue extends React.Component {
 
   render(){
     let playqueue = this.props.playqueue.map((song, idx) => (
-      <tr key={idx} value={song}>
+      <tr key={idx} onClick={this.playSong(song)}>
         <td>{song.title}</td>
         <td>{song.artist}</td>
-        <td>{song.song_duration}</td>
-        <td value={song.id} onClick={this.deleteSong}>Delete</td>
       </tr>
     ));
 
@@ -35,8 +33,6 @@ class PlayQueue extends React.Component {
           <tr>
             <th>Title</th>
             <th>Artist</th>
-            <th>Duration</th>
-            <th>Delete</th>
           </tr>
           {playqueue}
         </table>
