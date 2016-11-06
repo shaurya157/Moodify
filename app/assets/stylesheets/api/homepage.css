@@ -1,6 +1,6 @@
 
  .overlay-main {
-   background-image: url("/assets/splash_background.jpg");
+   background-image: url("http://res.cloudinary.com/djv7nouxz/image/upload/v1478417703/splash_background_czadzn.jpg");
    min-height: 100%;
    position: fixed;
    top: 0;
@@ -53,7 +53,7 @@
  }
 
 .homepage {
-  background-image: url("/assets/logo.png");
+  background-image: url("http://res.cloudinary.com/djv7nouxz/image/upload/v1478417702/logo_tscdje.png");
   height: auto;
   width: 250px;
 }
