@@ -1,9 +1,10 @@
 import {connect} from 'react-redux';
 import SongIndex from './song_index';
+import {playSong, addSongToQueue, pauseSong} from '../../actions/audio_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   songs: ownProps.songs,
-  location: ownProps.location
+  location: ownProps.location,
 });
 
 // This has a location to differ it from browse vs. playlist, making it easier

@@ -15,7 +15,6 @@
 }
 
 .recommended-songs ul {
-
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -31,17 +30,18 @@
   display: flex;
   flex-direction: column;
   background-color: #222326;
-  padding: 13px 8px 4px;
+  padding: 5%;
 }
 
 .song-index-item {
-  font-size: 14px;
+  font-size: 75%;
   display: flex;
   flex-direction: column;
   background-color: #222326;
   overflow: hidden;
-  width: auto;
-  min-height: 300px;
+  min-height: auto;
+  min-width: 200px;
+  margin-right: 10px;
 }
 
 .song-index-item-image {
@@ -59,4 +59,24 @@
 
 .song-index-item-album {
   color: #86878A;
+}
+
+.song-actions{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: whitesmoke;
+  opacity: 0;
+}
+
+.song-actions:hover {
+  transition-duration: 0.4s;
+  opacity: 0.7;
+
+  .play-song, .add-song-to-queue {
+    cursor: pointer;
+    opacity: 1;
+    width: auto;
+    height: auto;
+  }
 }
