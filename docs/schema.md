@@ -19,7 +19,7 @@ artist      | string    | not null
 album      | string    | not null
 song_image_url   | string    |
 audio_url   | string    | not null
-song_duration      | string    | 
+song_duration      | string    |
 
 ## playlists
 column name | data type | details
@@ -28,7 +28,6 @@ id          | integer   | not null, primary key
 title       | string    | not null,
 description | text      | not null
 user_id     | integer   | not null, foreign key (references users), indexed
-public      | boolean   | not null, default: false
 playlist_image_url   | string    |
 image_file_type | string |
 image_file_size | string |
