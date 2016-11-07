@@ -11,11 +11,8 @@ class SongIndexItem extends React.Component{
     return (event) => {
       event.preventDefault();
       if(this.props.playing && this.props.song.id === song.id){
-        console.log(this.props.song);
-        console.log(song);
         this.props.pauseSong();
       } else {
-        console.log('playing');
         this.props.playSong(song);
       }
     };
