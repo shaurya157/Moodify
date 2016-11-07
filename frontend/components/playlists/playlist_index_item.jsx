@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import {playlistModalStyle} from '../../util/modal_styles';
 import PlaylistContainer from '../playlist_modal/playlist_container';
+import {withRouter} from 'react-router';
 
 class PlaylistIndexItem extends React.Component{
   constructor(props){
@@ -12,8 +13,8 @@ class PlaylistIndexItem extends React.Component{
 
   openModal(id){
     return () => {
-      this.props.requestPlaylist(id);
       this.setState({playlistModal: true});
+      this.props.router.push(`/app/playlist/${id}`);
     };
   }
 
@@ -49,4 +50,4 @@ class PlaylistIndexItem extends React.Component{
   }
 }
 
-export default PlaylistIndexItem;
+export default withRouter(PlaylistIndexItem);

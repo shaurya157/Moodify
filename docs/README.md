@@ -67,15 +67,15 @@ Some bonus features that Moodify may also include:
 
 **Objective:** Songs can be played
 
-- [ ] `Song` model
-- [ ] Audio file hosting (AWS?)(Cloudinary?)
-- [ ] Image file hosting (AWS?)(Cloudinary?)
-- [ ] Seed database with a small amount of test data
-- [ ] CRUD API for songs (`SongsController`)
-- [ ] JBuilder views for songs
-- [ ] Song components and respective Redux loops
-- [ ] Style songs components
-- [ ] Seed songs
+- [x] `Song` model
+- [x] Audio file hosting (AWS?)(Cloudinary?)
+- [x] Image file hosting (AWS?)(Cloudinary?)
+- [x] Seed database with a small amount of test data
+- [x] CRUD API for songs (`SongsController`)
+- [x] JBuilder views for songs
+- [x] Song components and respective Redux loops
+- [x] Style songs components
+- [x] Seed songs
 
 ### Phase 3: Playlists and playlist follows (2 day)
 
@@ -98,14 +98,14 @@ Some bonus features that Moodify may also include:
 ### Phase 4: Streaming audio (2 days)
 
 **Objective:** Audio can be streamed Continuously while navigating the site
-- [ ] Research streaming Audio
-- [ ] Current song Redux cycles and reducer
-- [ ] Current song components
-  - [ ] `PlayBar`
-  - [ ] `CurrentSongDisplay`
-  - [ ] `CurrentSongControlsContainer`
-  - [ ] `CurrentSongProgressBar`
-- [ ] Styling for audio components
+- [x] Research streaming Audio
+- [x] Current song Redux cycles and reducer
+- [x] Current song components
+  - [x] `PlayBar`
+  - [x] `CurrentSongDisplay`
+  - [x] `CurrentSongControlsContainer`
+  - [x] `CurrentSongProgressBar`
+- [x] Styling for audio components
 
 ### Phase 5: Follow Users / updating current user (1 day)
 
