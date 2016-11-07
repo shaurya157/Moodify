@@ -1,8 +1,8 @@
 class CreateUserFollows < ActiveRecord::Migration
   def change
     create_table :user_follows do |t|
-      t.string :follower_id, null: false
-      t.string :followee_id, null: false
+      t.integer :follower_id, null: false
+      t.integer :followee_id, null: false
 
       t.timestamps null: false
     end
