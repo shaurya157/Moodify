@@ -192,3 +192,119 @@ Song.create({title: "Can't Let GO", artist: 'Adele',
             album: '25', song_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478454461/adele_m0kokc.jpg',
             audio_url:'http://res.cloudinary.com/djv7nouxz/video/upload/v1478454437/12_Can_t_Let_Go_iues2n.mp3',
               song_duration:'3:18'})
+
+Playlist.create({title: 'Chill', description:'Chill out with your friends with this playlist. Drinks on us!',
+                user_id: 1,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478455807/photo-1470486356494-713066102e56_w9c5c7.jpg'})
+
+Playlist.create({title: 'Hip-Hop', description:'Featuring the latest tracks poppin off. Have an awesome night with your homies with this playlist',
+                user_id: 2,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478474812/hip_hop_xsqy0s.jpg'})
+
+Playlist.create({title: 'Pop', description:'Groove to the beat!',
+                user_id: 3,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478474901/photo-1416273567255-8abe875affcd_wllc4l.jpg'})
+
+Playlist.create({title: 'Energize', description:'Electro music flowing through your veins',
+                user_id: 4,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478475372/photo-1470229722913-7c0e2dbbafd3_g5gikz.jpg'})
+
+Playlist.create({title: 'Romance', description:'Songs for breakups, new romances and everything in between',
+                user_id: 5,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478475316/Af0sF2OS5S5gatqrKzVP_Silhoutte_zfr604.jpg'})
+
+Playlist.create({title: 'Celebrate', description:'Feel the drop',
+                user_id: 6,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478475730/photo-1435247220474-1cec0bc7fbc9_xodnag.jpg'})
+
+Playlist.create({title: 'Party', description:'Earworms all day, errday!',
+                user_id: 1,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478475803/photo-1438557068880-c5f474830377_vma10m.jpg'})
+
+Playlist.create({title: 'Travel', description:'Feel grand during your adventure with us',
+                user_id: 1,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478455807/photo-1470486356494-713066102e56_w9c5c7.jpg'})
+
+Playlist.create({title: 'Happy', description:'Upbeat music for upbeat people',
+                user_id: 3,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478475722/photo-1472746729193-36ad213ac4a5_nmbfoh.jpg'})
+
+Playlist.create({title: 'Sad', description:'Feels bad man',
+                user_id: 4,
+                playlist_image_url: 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478475789/photo-1473861646675-0252edc45daa_goisur.jpg'})
+
+PlaylistFollow.create({user_id: 1, playlist_id: 2})
+PlaylistFollow.create({user_id: 3, playlist_id: 2})
+PlaylistFollow.create({user_id: 4, playlist_id: 2})
+PlaylistFollow.create({user_id: 5, playlist_id: 2})
+PlaylistFollow.create({user_id: 6, playlist_id: 1})
+PlaylistFollow.create({user_id: 1, playlist_id: 6})
+PlaylistFollow.create({user_id: 1, playlist_id: 5})
+PlaylistFollow.create({user_id: 1, playlist_id: 10})
+PlaylistFollow.create({user_id: 2, playlist_id: 9})
+PlaylistFollow.create({user_id: 3, playlist_id: 8})
+PlaylistFollow.create({user_id: 4, playlist_id: 6})
+PlaylistFollow.create({user_id: 5, playlist_id: 3})
+PlaylistFollow.create({user_id: 6, playlist_id: 4})
+PlaylistFollow.create({user_id: 1, playlist_id: 5})
+PlaylistFollow.create({user_id: 2, playlist_id: 6})
+PlaylistFollow.create({user_id: 3, playlist_id: 7})
+PlaylistFollow.create({user_id: 4, playlist_id: 9})
+
+UserFollow.create({follower_id: 1, followee_id: 2})
+UserFollow.create({follower_id: 1, followee_id: 3})
+UserFollow.create({follower_id: 1, followee_id: 4})
+UserFollow.create({follower_id: 1, followee_id: 5})
+UserFollow.create({follower_id: 2, followee_id: 3})
+UserFollow.create({follower_id: 3, followee_id: 6})
+UserFollow.create({follower_id: 5, followee_id: 1})
+UserFollow.create({follower_id: 6, followee_id: 3})
+UserFollow.create({follower_id: 5, followee_id: 1})
+UserFollow.create({follower_id: 6, followee_id: 2})
+
+PlaylistSong.create({playlist_id: 1, song_id: 1})
+PlaylistSong.create({playlist_id: 1, song_id: 2})
+PlaylistSong.create({playlist_id: 1, song_id: 3})
+PlaylistSong.create({playlist_id: 1, song_id: 4})
+PlaylistSong.create({playlist_id: 1, song_id: 5})
+PlaylistSong.create({playlist_id: 1, song_id: 6})
+PlaylistSong.create({playlist_id: 1, song_id: 7})
+PlaylistSong.create({playlist_id: 2, song_id: 8})
+PlaylistSong.create({playlist_id: 2, song_id: 9})
+PlaylistSong.create({playlist_id: 2, song_id: 10})
+PlaylistSong.create({playlist_id: 2, song_id: 11})
+PlaylistSong.create({playlist_id: 2, song_id: 12})
+PlaylistSong.create({playlist_id: 3, song_id: 13})
+PlaylistSong.create({playlist_id: 3, song_id: 14})
+PlaylistSong.create({playlist_id: 3, song_id: 15})
+PlaylistSong.create({playlist_id: 3, song_id: 16})
+PlaylistSong.create({playlist_id: 3, song_id: 17})
+PlaylistSong.create({playlist_id: 3, song_id: 18})
+PlaylistSong.create({playlist_id: 3, song_id: 19})
+PlaylistSong.create({playlist_id: 3, song_id: 20})
+PlaylistSong.create({playlist_id: 4, song_id: 21})
+PlaylistSong.create({playlist_id: 4, song_id: 22})
+PlaylistSong.create({playlist_id: 4, song_id: 23})
+PlaylistSong.create({playlist_id: 4, song_id: 24})
+PlaylistSong.create({playlist_id: 4, song_id: 25})
+PlaylistSong.create({playlist_id: 5, song_id: 26})
+PlaylistSong.create({playlist_id: 5, song_id: 27})
+PlaylistSong.create({playlist_id: 5, song_id: 28})
+PlaylistSong.create({playlist_id: 5, song_id: 29})
+PlaylistSong.create({playlist_id: 5, song_id: 30})
+PlaylistSong.create({playlist_id: 6, song_id: 31})
+PlaylistSong.create({playlist_id: 6, song_id: 32})
+PlaylistSong.create({playlist_id: 6, song_id: 33})
+PlaylistSong.create({playlist_id: 6, song_id: 34})
+PlaylistSong.create({playlist_id: 7, song_id: 35})
+PlaylistSong.create({playlist_id: 7, song_id: 36})
+PlaylistSong.create({playlist_id: 7, song_id: 37})
+PlaylistSong.create({playlist_id: 7, song_id: 38})
+PlaylistSong.create({playlist_id: 8, song_id: 39})
+PlaylistSong.create({playlist_id: 8, song_id: 40})
+PlaylistSong.create({playlist_id: 8, song_id: 41})
+PlaylistSong.create({playlist_id: 9, song_id: 42})
+PlaylistSong.create({playlist_id: 9, song_id: 43})
+PlaylistSong.create({playlist_id: 10, song_id: 44})
+PlaylistSong.create({playlist_id: 10, song_id: 45})
+PlaylistSong.create({playlist_id: 10, song_id: 46})

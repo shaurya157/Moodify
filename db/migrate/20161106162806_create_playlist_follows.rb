@@ -1,8 +1,8 @@
 class CreatePlaylistFollows < ActiveRecord::Migration
   def change
     create_table :playlist_follows do |t|
-      t.string :user_id, null: false
-      t.string :playlist_id, null: false
+      t.integer :user_id, null: false
+      t.integer :playlist_id, null: false
 
       t.timestamps null: false
     end

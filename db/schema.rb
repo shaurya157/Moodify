@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20161106165540) do
   enable_extension "plpgsql"
 
   create_table "playlist_follows", force: :cascade do |t|
-    t.string   "user_id",     null: false
-    t.string   "playlist_id", null: false
+    t.integer  "user_id",     null: false
+    t.integer  "playlist_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20161106165540) do
   add_index "playlist_follows", ["user_id", "playlist_id"], name: "index_playlist_follows_on_user_id_and_playlist_id", using: :btree
 
   create_table "playlist_songs", force: :cascade do |t|
-    t.string   "playlist_id", null: false
-    t.string   "song_id",     null: false
+    t.integer  "playlist_id", null: false
+    t.integer  "song_id",     null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20161106165540) do
   create_table "playlists", force: :cascade do |t|
     t.string   "title",              null: false
     t.string   "description",        null: false
-    t.string   "user_id",            null: false
+    t.integer  "user_id",            null: false
     t.string   "playlist_image_url", null: false
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20161106165540) do
   add_index "songs", ["title", "song_image_url", "audio_url"], name: "index_songs_on_title_and_song_image_url_and_audio_url", using: :btree
 
   create_table "user_follows", force: :cascade do |t|
-    t.string   "follower_id", null: false
-    t.string   "followee_id", null: false
+    t.integer  "follower_id", null: false
+    t.integer  "followee_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
