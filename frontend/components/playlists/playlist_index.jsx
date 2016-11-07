@@ -1,4 +1,5 @@
 import React from 'react';
+import PlaylistIndexItemContainer from './playlist_index_item_container';
 
 class PlaylistIndex extends React.Component {
   constructor(props){
@@ -7,13 +8,17 @@ class PlaylistIndex extends React.Component {
 
   render(){
     const playlists = this.props.playlists.map((playlist) =>
-      <PlaylistIndexItemContainer playlist={playlist}/>
+      <PlaylistIndexItemContainer playlist={playlist} key={playlist.id}/>
     );
 
-    return (<div>
-      <div className='recommended-playlists-header'>Recommended Playlists</div>
-      {playlists}
-    </div>);
+    return (
+      <div className='recommended-playlists'>
+        <div className='recommended-playlists-header'>Recommended Playlists</div>
+        <div className='recommended-playlists-container'>
+          {playlists}
+        </div>
+      </div>
+  );
   }
 }
 

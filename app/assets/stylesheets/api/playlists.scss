@@ -1,3 +1,50 @@
-// Place all the styles related to the api/playlists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.recommended-playlists {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommended-playlists-header {
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #222326;
+  width: 100%;
+}
+
+.recommended-playlists-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.playlist-index-item-image {
+  height: 100%;
+/* width: auto; */
+}
+
+.playlist-index-item {
+  /* min-height: 50px; */
+  width: 20%;
+  height: 200px;
+/* margin: 2%; */
+/* padding-right: 2%; */
+/* padding-left: 2%; */
+  text-align: center;
+}
+
+.playlist-index-item-title {
+  height:100%;
+  width: 100%;
+  vertical-align: middle;
+  opacity: 0;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.playlist-index-item-title:hover{
+  background-color: #1C1C1F;
+  opacity: 0.7;
+  transition: 0.3s;
+}
