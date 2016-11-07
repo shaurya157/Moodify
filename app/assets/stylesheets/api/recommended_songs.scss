@@ -19,7 +19,7 @@
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .recommended-songs-list {

@@ -1,6 +1,5 @@
 import {ADD_SONG_TO_QUEUE,
         DELETE_SONG_FROM_QUEUE,
-        ADD_PLAYLIST_TO_QUEUE,
         PLAY_SONG,
         GO_FORWARD,
         GO_BACK,
@@ -33,9 +32,6 @@ const AudioReducer = (oldState = _defaultState, action) => {
         }
       });
       newState.playqueue = newPlayqueue;
-      return newState;
-    case ADD_PLAYLIST_TO_QUEUE:
-      newState.playqueue = oldState.playqueue.concat(action.playlist.songs);
       return newState;
     case PLAY_SONG:
       if(action.song){

@@ -1,14 +1,21 @@
-import {RECEIVE_ALL_PLAYLISTS} from '../actions/playlist_actions';
+import {RECEIVE_ALL_PLAYLISTS,
+        PLAY_PLAYLIST,
+        RECEIVE_PLAYLIST} from '../actions/playlist_actions';
 import merge from 'lodash/merge';
 
-const _defaultState = [];
+const _defaultState = {
+  allPlaylists: [],
+  currPlaylist: {}
+};
 
 const PlaylistsReducer = (oldState = _defaultState, action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
     case RECEIVE_ALL_PLAYLISTS:
-      return action.playlists;
+      return merge({}, oldState, {allPlaylists: action.playlists});
+    case RECEIVE_PLAYLIST:
+      return merge({}, oldState, {currPlaylist: action.playlist});
     default:
       return oldState;
   }

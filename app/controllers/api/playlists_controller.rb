@@ -3,4 +3,9 @@ class Api::PlaylistsController < ApplicationController
     @playlists = Playlist.all
     render :index
   end
+
+  def show
+    @playlist = Playlist.find_by_id(params[:id])
+    render :show
+  end
 end
