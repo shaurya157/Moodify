@@ -17,9 +17,9 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  overflow-y: scroll;
 }
 .browse-container {
   width: 80%;
-  margin-left: 2%;
   height: 100%;
 }

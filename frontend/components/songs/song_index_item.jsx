@@ -40,7 +40,7 @@ class SongIndexItem extends React.Component{
       playSongImageUrl =
       'http://res.cloudinary.com/djv7nouxz/image/upload/v1478395268/play_button_xe3rjt.png';
     }
-
+    
     return (
       <div className='song-index-item'>
         <div className='song-index-item-image'

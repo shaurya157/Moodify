@@ -9,6 +9,7 @@ class Browse extends React.Component{
 
   componentWillMount(){
     this.props.requestAllSongs();
+    this.props.requestAllPlaylists();
   }
 
   render(){
