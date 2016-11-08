@@ -28,13 +28,17 @@
 
 .playlist-table table {
   width: 90%;
-text-align: left;
-padding: 25px;
-border-collapse: collapse;
-margin: 0 auto;
-height: 70%;
-font-size: 16px;
-border-spacing: 0;
+  text-align: left;
+  padding: 25px;
+  border-collapse: collapse;
+  margin: 0 auto;
+  min-height: 300px;
+  font-size: 14px;
+  border-spacing: 0;
+}
+
+.playlist-table-details span{
+  color: #8B0000;
 }
 
 th {
@@ -42,9 +46,21 @@ th {
 }
 
 .playlist-table tr {
-  border-bottom: 1px solid #87888B;
+  border-bottom: 1px solid #222326;
 }
 
 td {
   text-overflow: ellipsis;
+}
+
+.playlist-table-details {
+    padding: 25px;
+    border-bottom: 1px solid #222326;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.playlist-table-details button {
+  float: right;
+  margin-right: 10px;
 }

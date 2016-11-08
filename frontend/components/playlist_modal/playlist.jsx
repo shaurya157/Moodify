@@ -9,6 +9,7 @@ class Playlist extends React.Component {
     super(props);
     this.state = {playListModal: false};
     this.closeModal = this.closeModal.bind(this);
+    this.playPlaylist = this.playPlaylist.bind(this);
   }
 
   componentWillMount(){
@@ -22,6 +23,12 @@ class Playlist extends React.Component {
 
   openModal(){
     this.setState({playListModal: true});
+  }
+
+  playPlaylist(playlist){
+    return(event) => {
+      this.props.playPlaylist(playlist);
+    };
   }
 
   closeModal(){
@@ -38,7 +45,8 @@ class Playlist extends React.Component {
            style={playlistModalStyle(this.props.playing)}
            className='playlist-modal'>
 
-           <PlaylistTable playlist={this.props.playlist}/>
+           <PlaylistTable playlist={this.props.playlist}
+             playPlaylist={this.playPlaylist}/>
 
         </Modal>
       </div>
