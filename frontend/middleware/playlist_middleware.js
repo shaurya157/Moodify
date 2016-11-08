@@ -1,16 +1,20 @@
 import {receiveAllPlaylists,
         REQUEST_ALL_PLAYLISTS,
         REQUEST_PLAYLIST,
-        requestPlaylist,
         receivePlaylist,
         CREATE_PLAYLIST_FOLLOW,
-        requestAllPlaylists} from '../actions/playlist_actions';
+        REQUEST_FOLLOWED_PLAYLISTS,
+        receiveFollowedPlaylists} from '../actions/playlist_actions';
 
-import {fetchPlaylists, fetchPlaylist, createPlaylistFollow} from '../util/playlist_api_util';
+import {fetchPlaylists,
+        fetchPlaylist,
+        createPlaylistFollow,
+        fetchUserFollowedPlaylists} from '../util/playlist_api_util';
 
 const PlaylistsMiddleware = ({dispatch}) => next => action => {
   const receiveAllPlaylistsSuccess = (playlists) => dispatch(receiveAllPlaylists(playlists));
   const receivePlaylistSuccess = (playlist) => dispatch(receivePlaylist(playlist));
+  const receiveFollowedPlaylistsSuccess = (playlists) => dispatch(receiveFollowedPlaylists(playlists));
 
   switch (action.type) {
     case REQUEST_ALL_PLAYLISTS:
@@ -21,6 +25,9 @@ const PlaylistsMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case CREATE_PLAYLIST_FOLLOW:
       createPlaylistFollow(action.userId, action.playlistId);
+      return next(action);
+    case REQUEST_FOLLOWED_PLAYLISTS:
+      fetchUserFollowedPlaylists(action.userId, receiveFollowedPlaylistsSuccess);
       return next(action);
     default:
       return next(action);
