@@ -18,17 +18,10 @@ class Sidebar extends React.Component {
   }
 
   render(){
-    let currentUserPicture;
-    if(this.props.currentUser.profile_image_url.length > 0){
-      currentUserPicture = this.props.currentUser.profile_image_url;
-    } else {
-      currentUserPicture = 'http://res.cloudinary.com/djv7nouxz/image/upload/v1478546800/FullSizeRender_f0dshm.jpg';
-    }
-
     return (
     <div className='sidebar'>
       <div className='logo' onClick={this.redirectToBrowse}>
-        <img src={'assets/logo.png'}></img>
+        <img src={'http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478417702/logo_tscdje.png'}></img>
       </div>
 
       <ul>
@@ -40,7 +33,7 @@ class Sidebar extends React.Component {
         </li>
         <li>
           <div className='sidebar-item' onClick={this.redirectToBrowse}>
-            <img src={'assets/headphone_logo.png'}></img>
+            <img src={'http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478417702/headphone_logo_cpvqvw.png'}></img>
             <p>Browse</p>
           </div>
         </li>
@@ -54,7 +47,7 @@ class Sidebar extends React.Component {
 
       <div className='user-profile-sidebar'
         onClick={this.redirectToProfilePage}>
-        <img src={currentUserPicture}></img>
+        <img src={this.props.currentUser.profile_image_url}></img>
       </div>
     </div>);
   }

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :username, uniqueness: true
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :ensure_profile_picture
   attr_reader :password
 
   has_many :playlists, inverse_of: :user
@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
+  end
+
+  def ensure_profile_picture
+    self.profile_image_url ||= 'http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478546800/FullSizeRender_f0dshm.jpg'
   end
 
   def password=(password)
