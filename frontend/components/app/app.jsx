@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import SidebarContainer from '../sidebar/sidebar_container';
 import PlayerContainer from '../player/player_container';
+import BrowseContainer from '../browse/browse_container';
 
 class App extends React.Component {
   constructor(props){
@@ -20,6 +21,11 @@ class App extends React.Component {
   }
 
   render (){
+    let browseContainer;
+    if(this.props.router.location.pathname === '/app' ||
+     this.props.router.location.pathname.includes('playlist')){
+      browseContainer = <BrowseContainer />;
+    }
     let logoutButton;
     if(this.props.currentUser){
       logoutButton = <button onClick={this.handlelogout}
@@ -29,8 +35,9 @@ class App extends React.Component {
     return (
     <div className='wrapper'>
       <SidebarContainer />
-      <PlayerContainer />
+      {browseContainer}
       {this.props.children}
+      <PlayerContainer />
     </div>);
   }
 }

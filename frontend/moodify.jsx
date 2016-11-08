@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import {requestPlaylist} from './actions/playlist_actions';
+import {requestUser} from './actions/user_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  window.requestPlaylist = requestPlaylist;
+  window.requestUser = requestUser;
   window.store = store;
   // window.fetchPlaylist = fetchPlaylist;
   ReactDOM.render(<Root store={store} />, root);

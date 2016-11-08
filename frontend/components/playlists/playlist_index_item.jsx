@@ -1,25 +1,16 @@
 import React from 'react';
-import Modal from 'react-modal';
-import {playlistModalStyle} from '../../util/modal_styles';
-import PlaylistContainer from '../playlist_modal/playlist_container';
 import {withRouter} from 'react-router';
 
 class PlaylistIndexItem extends React.Component{
   constructor(props){
     super(props);
-    this.state = {playlistModal: false};
-    this.openModal = this.openModal.bind(this);
   }
 
-  openModal(id){
-    return () => {
-      this.setState({playlistModal: true});
+  handleClick(id){
+    return (event) => {
+      event.preventDefault();
       this.props.router.push(`/app/playlist/${id}`);
     };
-  }
-
-  closeModal(){
-    this.setState({playlistModal: false});
   }
 
   render(){
@@ -32,19 +23,11 @@ class PlaylistIndexItem extends React.Component{
 
     return(
       <div className='playlist-index-item'
-        onClick={this.openModal(this.props.playlist.id)}>
+        onClick={this.handleClick(this.props.playlist.id)}>
         <div className='playlist-index-item-image'
           style={divStyle}>
           <div className='playlist-index-item-title'>{this.props.playlist.title}</div>
         </div>
-
-        <Modal isOpen={this.state.playlistModal}
-          onRequestClose={this.closeModal.bind(this)}
-          style={playlistModalStyle}>
-
-          <PlaylistContainer
-            closeModal={this.closeModal.bind(this)}/>
-        </Modal>
       </div>
     );
   }

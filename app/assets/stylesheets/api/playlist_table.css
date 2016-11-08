@@ -1,0 +1,50 @@
+/*@-webkit-keyframes animateright {
+    from {right: -300px; opacity: 0}
+    to {right: 0; opacity: 1}
+}
+
+@keyframes animateright {
+    from {right: -300px; opacity: 0}
+    to {right: 0; opacity: 1}*/
+
+.playlist-table{
+  /*-webkit-animation-name: animateright;
+  -webkit-animation-duration: 1s;*/
+  background-color: #121314;
+  height: 100%;
+}
+
+.playlist-table-image {
+  height: 35%;
+}
+
+.playlist-table-title{
+  color: white;
+  font-size: 36px;
+  position: relative;
+  top: 70%;
+  left: 2%;
+}
+
+.playlist-table table {
+  width: 90%;
+text-align: left;
+padding: 25px;
+border-collapse: collapse;
+margin: 0 auto;
+height: 70%;
+font-size: 16px;
+border-spacing: 0;
+}
+
+th {
+  color: #87888B;
+}
+
+.playlist-table tr {
+  border-bottom: 1px solid #87888B;
+}
+
+td {
+  text-overflow: ellipsis;
+}

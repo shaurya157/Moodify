@@ -71,7 +71,7 @@ const AudioReducer = (oldState = _defaultState, action) => {
         song: playlist.songs[0]
       });
     default:
-      return _defaultState;
+      return oldState;
   }
 };
 

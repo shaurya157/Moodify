@@ -1,0 +1,10 @@
+.user-profile{
+  background: #121314;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  overflow-y: scroll;
+}
