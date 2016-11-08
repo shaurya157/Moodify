@@ -81,19 +81,19 @@ Some bonus features that Moodify may also include:
 
 **Objective:** Playlists can be created, destroyed, followed, and unfollowed. Songs can be added to and removed from playlists.
 
-- [ ] `Playlist` model
-- [ ] Seed database with a small amount of test data
+- [x] `Playlist` model
+- [x] Seed database with a small amount of test data
 - [ ] CRUD API for playlists (`PlaylistsController`)
-- [ ] JBuilder views for playlists
-- [ ] Fetching playlists for the current user
+- [x] JBuilder views for playlists
+- [x] Fetching playlists for the current user
 - [ ] Adding and removing songs from playlists
 - [ ] Playlist components and respective Redux loops
-- [ ] Style playlist components
-- [ ] Seed playlists
-- [ ] `PlaylistFollow` model
-- [ ] Seed database with a small amount of test data
+- [x] Style playlist components
+- [x] Seed playlists
+- [x] `PlaylistFollow` model
+- [x] Seed database with a small amount of test data
 - [ ] Create destroy API for playlists (`PlaylistsController`)
-- [ ] Add buttons for following / unfollowing playlists
+- [x] Add buttons for following / unfollowing playlists
 
 ### Phase 4: Streaming audio (2 days)
 
