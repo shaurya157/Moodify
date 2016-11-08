@@ -13,3 +13,11 @@ export const fetchPlaylist = (id, success) => {
   success
   });
 };
+
+export const createPlaylistFollow = (userId, playlistId, success) => {
+  $.ajax({
+  method: 'POST',
+  url: `api/playlistfollows`,
+  data: {user_id: userId, playlist_id: playlistId}
+  });
+};

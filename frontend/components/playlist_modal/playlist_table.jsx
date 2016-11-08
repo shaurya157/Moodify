@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlaylistTable = ({playlist, playPlaylist}) => {
+const PlaylistTable = ({playlist, playPlaylist, createPlaylistFollow, currentUser}) => {
   let divStyle = {
     backgroundImage: `url(${playlist.playlist_image_url})`,
     backgroundSize: `cover`,
@@ -24,9 +24,9 @@ const PlaylistTable = ({playlist, playPlaylist}) => {
         <span className='playlist-table-title'>{playlist.title}</span>
       </div>
       <div className='playlist-table-details'>
-        Created by <span clasName='to-highlight'>{playlist.username}</span>
+        Created by <span className='to-highlight'>{playlist.username}</span>
 
-          <button>Follow</button>
+        <button onClick={createPlaylistFollow(currentUser.id, playlist.id)}>Follow</button>
           <button onClick={playPlaylist(playlist)}>Play</button>
       </div>
       <table>
