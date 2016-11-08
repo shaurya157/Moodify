@@ -21,3 +21,12 @@ export const createPlaylistFollow = (userId, playlistId, success) => {
   data: {user_id: userId, playlist_id: playlistId}
   });
 };
+
+export const fetchUserFollowedPlaylists = (userId, success) => {
+  $.ajax({
+    method: 'GET',
+    url: `api/users/${userId}`,
+    data: {userId: userId, need_playlist: true},
+    success
+  });
+};

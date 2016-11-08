@@ -13,7 +13,12 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    render :show
+
+    if params[:need_playlist]
+      render json: @user.followed_playlists
+    else
+      render :show
+    end
   end
 
   private

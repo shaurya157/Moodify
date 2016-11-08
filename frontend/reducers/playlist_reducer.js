@@ -1,12 +1,14 @@
 import {RECEIVE_ALL_PLAYLISTS,
         PLAY_PLAYLIST,
         RECEIVE_PLAYLIST,
-        CLEAR_PLAYLIST} from '../actions/playlist_actions';
+        CLEAR_PLAYLIST,
+        RECEIVE_FOLLOWED_PLAYLISTS} from '../actions/playlist_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
   allPlaylists: [],
-  currPlaylist: {}
+  currPlaylist: {},
+  followedPlaylists: []
 };
 
 const PlaylistsReducer = (oldState = _defaultState, action) => {
@@ -18,7 +20,9 @@ const PlaylistsReducer = (oldState = _defaultState, action) => {
     case RECEIVE_PLAYLIST:
       return merge({}, oldState, {currPlaylist: action.playlist});
     case CLEAR_PLAYLIST:
-      return merge({}, oldState, {currPlaylist: []});
+      return merge({}, oldState, {currPlaylist: {}});
+    case RECEIVE_FOLLOWED_PLAYLISTS:
+      return merge({}, oldState, {followedPlaylists: action.playlists});
     default:
       return oldState;
   }
