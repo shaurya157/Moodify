@@ -22,7 +22,7 @@ class SongPlayer extends React.Component {
   }
 
   startNextSong(){
-    if(this.props.playqueue.length !== 0){
+    if(this.props.playqueue && this.props.playqueue.length !== 0){
       this.setState({progress: 0});
       this.props.goForward();
     }
