@@ -6,7 +6,8 @@ import {requestPlaylist, clearPlaylist, createPlaylistFollow} from '../../action
 const mapStateToProps = (state) => ({
   playlist: state.playlists.currPlaylist,
   playing: document.getElementsByClassName('player-not-playing').length === 0,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  followedPlaylists: state.playlists.followedPlaylists
 });
 
 const mapDispatchToProps = (dispatch) => ({

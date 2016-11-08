@@ -25,6 +25,7 @@ const PlaylistsMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case CREATE_PLAYLIST_FOLLOW:
       createPlaylistFollow(action.userId, action.playlistId);
+      console.log('created follow');
       return next(action);
     case REQUEST_FOLLOWED_PLAYLISTS:
       fetchUserFollowedPlaylists(action.userId, receiveFollowedPlaylistsSuccess);
