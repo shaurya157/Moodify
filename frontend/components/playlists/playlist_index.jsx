@@ -6,6 +6,9 @@ class PlaylistIndex extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    this.props.requestFollowedPlaylists(this.props.currentUser.id);
+  }
   render(){
     const playlists = this.props.playlists.map((playlist) =>
       <PlaylistIndexItemContainer playlist={playlist} key={playlist.id}/>
