@@ -4,8 +4,9 @@ import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 import AppContainer from './app/app_container';
 import SplashContainer from './splash/splash_container';
 import SessionFormContainer from './session_form/session_form_container';
-import BrowseContainer from './browse/browse_container';
+// import BrowseContainer from './browse/browse_container';
 import PlaylistContainer from './playlist_modal/playlist_container';
+import UserContainer from './user/user_container';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -28,8 +29,8 @@ const Root = ({ store }) => {
           <Route path='/login' component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         </Route>
         <Route path='/app' component={ AppContainer }>
-          <IndexRoute component={ BrowseContainer }/>
-          <Route path='/playlist/:playlistId' component={ PlaylistContainer }/>
+          <Route path='/app/playlist/:playlistId' component={ PlaylistContainer }/>
+          <Route path='/app/users/:userId' component={UserContainer} />
         </Route>
       </Router>
   </Provider>);
