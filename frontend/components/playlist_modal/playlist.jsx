@@ -28,14 +28,17 @@ class Playlist extends React.Component {
 
   playPlaylist(playlist){
     return(event) => {
+      console.log(event, 'playing');
+      event.preventDefault();
       this.props.playPlaylist(playlist);
       this.setState({playing: true});
     };
   }
 
-  createPlaylistFollow(userId, playlistId){
+  createPlaylistFollow(playlistId){
     return(event) => {
-      this.props.createPlaylistFollow(userId, playlistId);
+      event.preventDefault();
+      this.props.createPlaylistFollow(this.props.currentUser.id, playlistId);
     };
   }
 
@@ -46,6 +49,13 @@ class Playlist extends React.Component {
   }
 
   render(){
+    let followed;
+    if(this.props.followedPlaylists.find(el => el.id === this.props.playlist.id)){
+      followed = true;
+    } else {
+      followed = false;
+    }
+
     return(
       <div>
         <Modal isOpen={this.state.playListModal}
@@ -56,7 +66,7 @@ class Playlist extends React.Component {
            <PlaylistTable playlist={this.props.playlist}
              playPlaylist={this.playPlaylist}
              createPlaylistFollow={this.createPlaylistFollow}
-             currentUser={this.props.currentUser}/>
+             followed={followed}/>
 
         </Modal>
       </div>

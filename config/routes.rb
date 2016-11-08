@@ -4,7 +4,12 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :songs, only: [:index]
 
-    resources :playlists, only: [:index, :show, :create]
+    resources :playlists, only: [:index, :show, :create] do
+      member do
+        get 'follow'
+        delete 'unfollow'
+      end
+    end
     resources :playlistfollows, only: [:create, :destroy]
   end
 
