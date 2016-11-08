@@ -7,9 +7,10 @@ import {withRouter} from 'react-router';
 class Playlist extends React.Component {
   constructor(props){
     super(props);
-    this.state = {playListModal: false};
+    this.state = {playListModal: false, playing: props.playing};
     this.closeModal = this.closeModal.bind(this);
     this.playPlaylist = this.playPlaylist.bind(this);
+    this.createPlaylistFollow = this.createPlaylistFollow.bind(this);
   }
 
   componentWillMount(){
@@ -28,6 +29,13 @@ class Playlist extends React.Component {
   playPlaylist(playlist){
     return(event) => {
       this.props.playPlaylist(playlist);
+      this.setState({playing: true});
+    };
+  }
+
+  createPlaylistFollow(userId, playlistId){
+    return(event) => {
+      this.props.createPlaylistFollow(userId, playlistId);
     };
   }
 
@@ -42,11 +50,13 @@ class Playlist extends React.Component {
       <div>
         <Modal isOpen={this.state.playListModal}
            onRequestClose={this.closeModal}
-           style={playlistModalStyle(this.props.playing)}
+           style={playlistModalStyle(this.state.playing)}
            className='playlist-modal'>
 
            <PlaylistTable playlist={this.props.playlist}
-             playPlaylist={this.playPlaylist}/>
+             playPlaylist={this.playPlaylist}
+             createPlaylistFollow={this.createPlaylistFollow}
+             currentUser={this.props.currentUser}/>
 
         </Modal>
       </div>

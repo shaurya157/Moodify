@@ -70,7 +70,9 @@
 
 .playqueue {
   overflow-y: scroll;
-  height: 50%;
+  height: 40%;
+  margin-top: 35px;
+  width: 100%;
 }
 
 .playqueue table {
@@ -78,6 +80,7 @@
   height: 100%;
   text-align: left;
   border-collapse: collapse;
+  font-size: 65%;
 }
 
 .song-controls {
@@ -99,19 +102,12 @@
   cursor: pointer;
 }
 
-.playqueue {
-  margin-top: 35px;
-  height: 20%;
-  width: 100%;
-}
-
 .playqueue th{
   color:#87888B;
 }
 
 .playqueue td{
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
 }
 

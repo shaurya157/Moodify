@@ -66,9 +66,11 @@ const AudioReducer = (oldState = _defaultState, action) => {
       return merge(newState, {playing: false});
     case PLAY_PLAYLIST:
       let playlist = action.playlist;
-      return({playqueue: playlist.songs.slice(1),
+      return(
+        {playqueue: playlist.songs.slice(1),
         playing: true,
-        song: playlist.songs[0]
+        song: playlist.songs[0],
+        playedSongs: []
       });
     default:
       return oldState;
