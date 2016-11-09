@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
     if params[:need_playlist]
       render json: @user.followed_playlists
     else
-      render :show
+      render :show_user
     end
   end
 
