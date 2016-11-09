@@ -3,6 +3,20 @@ import React from 'react';
 class User extends React.Component{
   constructor(props){
     super(props);
+
+    this.toggleFollow = this.toggleFollow.bind(this);
+  }
+
+  toggleFollow(followed){
+    return () => {
+      if(followed === true) {
+        this.props.deleteUserFollow(this.props.currentUser.id,
+                                    this.props.user.id);
+      } else {
+        this.props.createUserFollow(this.props.currentUser.id,
+                                    this.props.user.id);
+      }
+    };
   }
 
   render(){
@@ -12,9 +26,21 @@ class User extends React.Component{
       backgroundPosition: `50%`,
     };
 
+    let followed;
+    if(this.props.user.id &&
+      this.props.user.followers.find(el => el.id === this.props.currentUser.id)){
+      followed = true;
+    } else {
+      followed = false;
+    }
+
     let followButton;
     if(!(this.props.user.id === this.props.currentUser.id)){
-      followButton = <button>Follow</button>;
+      if(followed){
+        followButton = <button onClick={this.toggleFollow(followed)}>Unfollow</button>;
+      } else {
+        followButton = <button onClick={this.toggleFollow(followed)}>Follow</button>;
+      }
     }
 
     return (
