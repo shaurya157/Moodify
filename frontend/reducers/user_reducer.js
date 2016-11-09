@@ -9,11 +9,14 @@ const _defaultState = {
 const UsersReducer = (oldState = _defaultState, action) => {
   Object.freeze(oldState);
 
+  let newState = merge({}, oldState);
+
   switch (action.type) {
     case RECEIVE_USER:
-      return merge({}, oldState, {user: action.user});
+      newState.user = action.user;
+      return newState;
     default:
-      return oldState;
+      return newState;
   }
 };
 

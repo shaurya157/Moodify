@@ -7,6 +7,7 @@ import SessionFormContainer from './session_form/session_form_container';
 // import BrowseContainer from './browse/browse_container';
 import PlaylistContainer from './playlist_modal/playlist_container';
 import UserContainer from './user/user_container';
+import {requestUser} from '../actions/user_actions';
 
 const Root = ({ store }) => {
   const _redirectIfLoggedIn = (nextState, replace) => {
@@ -15,10 +16,14 @@ const Root = ({ store }) => {
     }
   };
 
-  const _requireLogin = (nextState, replace) => {
-    if (!store.getState().session.currentUser) {
-      replace("/login");
-    }
+  // const _requireLogin = (nextState, replace) => {
+  //   if (!store.getState().session.currentUser) {
+  //     replace("/login");
+  //   }
+  // };
+
+  const _updateUsers = (nextState) => {
+      store.dispatch(requestUser(parseInt(nextState.params.userId)));
   };
 
   return (
@@ -30,7 +35,7 @@ const Root = ({ store }) => {
         </Route>
         <Route path='/app' component={ AppContainer }>
           <Route path='/app/playlist/:playlistId' component={ PlaylistContainer }/>
-          <Route path='/app/users/:userId' component={UserContainer} />
+          <Route path='/app/users/:userId' component={UserContainer} onEnter={_updateUsers}/>
         </Route>
       </Router>
   </Provider>);
