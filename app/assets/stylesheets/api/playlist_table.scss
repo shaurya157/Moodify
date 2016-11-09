@@ -68,3 +68,26 @@ td {
 .unfollow-button {
   background-color: green;
 }
+
+.playlist-table img {
+  height: 100%;
+  width: auto;
+}
+
+.playlist-table-song-actions img {
+  height: 50%;
+}
+
+.playlist-table-playsong img, .playlist-table-song-actions img {
+  visibility: hidden;
+}
+
+.playlist-table tr:hover {
+  background-color: #1C1C1F;
+
+  .playlist-table-playsong img, .playlist-table-song-actions img {
+    visibility: visible;
+    cursor: pointer;
+    margin: 0 auto;
+  }
+}

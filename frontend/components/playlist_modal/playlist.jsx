@@ -39,8 +39,8 @@ class Playlist extends React.Component {
   playSong(song){
     return(event) => {
       this.props.playSong(song);
-      this.setState({playing: true})
-    }
+      this.setState({playing: true});
+    };
   }
 
   createPlaylistFollow(playlistId){
@@ -70,6 +70,7 @@ class Playlist extends React.Component {
     } else {
       followed = false;
     }
+
     return(
       <div>
         <Modal isOpen={this.state.playListModal}

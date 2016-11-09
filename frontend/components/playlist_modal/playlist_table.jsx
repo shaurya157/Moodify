@@ -27,16 +27,16 @@ class PlaylistTable extends React.Component {
     };
 
     let songs = this.props.playlist.songs.map((song, idx)=>(
-      <tr key={song.id}>
-        <td className='playlist-table-playsong'>
+      <tr key={song.id} onDoubleClick={this.props.playSong(song)}>
+        <td className='playlist-table-playsong' onClick={this.props.playSong(song)}>
           <img src='http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478395268/play_button_xe3rjt.png'></img>
         </td>
         <td>{idx + 1}</td>
         <td>{song.title}</td>
         <td>{song.artist}</td>
         <td>{song.album}</td>
-        <td className='playlist-table-playsong'>
-          <img src='http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478395268/play_button_xe3rjt.png'></img>
+        <td className='playlist-table-song-actions'>
+          <img src='http://res.cloudinary.com/djv7nouxz/image/upload/v1478656649/ellipsis_szfcs8.png'></img>
         </td>
         <td>{song.song_duration}</td>
         <td>
@@ -66,7 +66,7 @@ class PlaylistTable extends React.Component {
         </div>
         <table>
           <tr>
-            <th></th>
+            <th className='table-header-playsong'></th>
             <th>#</th>
             <th>TITLE</th>
             <th>ARTIST</th>
