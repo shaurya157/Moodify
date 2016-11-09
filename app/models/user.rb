@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def ensure_profile_picture
-    self.profile_image_url ||= 'http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478546800/FullSizeRender_f0dshm.jpg'
+    self.profile_image_url ||= 'https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478546800/FullSizeRender_f0dshm.jpg'
   end
 
   def password=(password)

@@ -57,13 +57,13 @@ class SongPlayer extends React.Component {
 
         <div className='song-controls'>
           <div onClick={this.startPreviousSong} className='playqueue-previous'>
-            <img src='http://res.cloudinary.com/djv7nouxz/image/upload/v1478412309/previous_button_dteyd7.png'></img>
+            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478412309/previous_button_dteyd7.png'></img>
           </div>
           <div onClick={this.togglePlay} className='playqueue-resume'>
-            <img src='http://res.cloudinary.com/djv7nouxz/image/upload/v1478412042/play_button_zl1jcp.png'></img>
+            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478412042/play_button_zl1jcp.png'></img>
           </div>
           <div onClick={this.startNextSong} className='playqueue-next'>
-            <img src='http://res.cloudinary.com/djv7nouxz/image/upload/v1478412310/next_button_zzezii.png'></img>
+            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478412310/next_button_zzezii.png'></img>
           </div>
         </div>
       </div>

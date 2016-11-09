@@ -43,14 +43,14 @@ class PlaylistTable extends React.Component {
     let songs = this.props.playlist.songs.map((song, idx)=>(
       <tr key={song.id} onDoubleClick={this.props.playSong(song)}>
         <td className='playlist-table-playsong' onClick={this.props.playSong(song)}>
-          <img src='http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478395268/play_button_xe3rjt.png'></img>
+          <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478395268/play_button_xe3rjt.png'></img>
         </td>
         <td>{idx + 1}</td>
         <td>{song.title}</td>
         <td>{song.artist}</td>
         <td>{song.album}</td>
         <td className='playlist-table-song-actions' onClick={this.openModal}>
-          <img src='http://res.cloudinary.com/djv7nouxz/image/upload/v1478656649/ellipsis_szfcs8.png'></img>
+          <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478656649/ellipsis_szfcs8.png'></img>
           <Modal isOpen={this.state.songActionModal}
                 onRequestClose={this.closeModal}
                 style={songActionModalStyle}>
