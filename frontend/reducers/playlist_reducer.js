@@ -7,22 +7,27 @@ import merge from 'lodash/merge';
 
 const _defaultState = {
   allPlaylists: [],
-  currPlaylist: {songs: []},
+  currPlaylist: {songs: [], description: "", id: '', playlist_image_url:"", title:"", username:"" },
   followedPlaylists: []
 };
 
 const PlaylistsReducer = (oldState = _defaultState, action) => {
   Object.freeze(oldState);
+  const newState = merge({}, oldState);
 
   switch (action.type) {
     case RECEIVE_ALL_PLAYLISTS:
-      return merge({}, oldState, {allPlaylists: action.playlists});
+      newState.allPlaylists = action.playlists;
+      return newState;
     case RECEIVE_PLAYLIST:
-      return merge({}, oldState, {currPlaylist: action.playlist});
+      newState.currPlaylist = action.playlist;
+      return newState;
     case CLEAR_PLAYLIST:
-      return merge({}, oldState, {currPlaylist: {}});
+      newState.currPlaylist = _defaultState.currPlaylist;
+      return newState;
     case RECEIVE_FOLLOWED_PLAYLISTS:
-      return merge({}, oldState, {followedPlaylists: action.playlists});
+      newState.followedPlaylists = action.playlists;
+      return newState;
     default:
       return oldState;
   }

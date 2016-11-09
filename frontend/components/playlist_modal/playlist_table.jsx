@@ -9,10 +9,9 @@ class PlaylistTable extends React.Component {
 
   togglePlaylistFollow(playlistId){
     if(this.props.followed === false){
-      console.log('following');
       return this.props.createPlaylistFollow(playlistId);
     } else {
-      console.log('unfollowing');
+      return this.props.deletePlaylistFollow(playlistId);
     }
   }
 
@@ -29,19 +28,28 @@ class PlaylistTable extends React.Component {
 
     let songs = this.props.playlist.songs.map((song, idx)=>(
       <tr key={song.id}>
+        <td className='playlist-table-playsong'>
+          <img src='http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478395268/play_button_xe3rjt.png'></img>
+        </td>
         <td>{idx + 1}</td>
         <td>{song.title}</td>
         <td>{song.artist}</td>
         <td>{song.album}</td>
+        <td className='playlist-table-playsong'>
+          <img src='http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478395268/play_button_xe3rjt.png'></img>
+        </td>
         <td>{song.song_duration}</td>
+        <td>
+
+        </td>
       </tr>
     ));
 
     let followButton;
-    if(this.props.following){
-      followButton = <button onClick={this.togglePlaylistFollow(this.props.playlist.id) } className='follow-button'>Follow</button>;
-    } else {
+    if(this.props.followed){
       followButton = <button onClick={this.togglePlaylistFollow(this.props.playlist.id) } className='unfollow-button'>Unfollow</button>;
+    } else {
+      followButton = <button onClick={this.togglePlaylistFollow(this.props.playlist.id) } className='follow-button'>Follow</button>;
     }
 
     return (
@@ -58,10 +66,12 @@ class PlaylistTable extends React.Component {
         </div>
         <table>
           <tr>
+            <th></th>
             <th>#</th>
             <th>TITLE</th>
             <th>ARTIST</th>
             <th>ALBUM</th>
+            <th></th>
             <th>DURATION</th>
           </tr>
           {songs}
