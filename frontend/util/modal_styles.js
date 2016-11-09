@@ -71,3 +71,24 @@ export const playlistModalStyle = (playing) => {
   };
  }
 };
+
+export const songActionModalStyle = {
+  overlay : {
+   position        : 'relative',
+   top             : '200px',
+   left            : '100px',
+   right           : 0,
+   bottom          : 0,
+   zIndex          : 60
+ },
+ content : {
+   position        : 'fixed',
+   top             : '150px',
+   width           : '300px',
+   height          : '300px',
+   borderRadius    : '20px',
+   padding         : 0,
+   margin          : '0 auto',
+   zIndex          : 51
+ }
+};
