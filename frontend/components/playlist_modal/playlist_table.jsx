@@ -1,6 +1,6 @@
 import React from 'react';
-import Modal from 'react-modal';
-import {songActionModalStyle} from '../../util/modal_styles';
+// import Modal from 'react-modal';
+// import {songActionModalStyle} from '../../util/modal_styles';
 import SongActionsContainer from './song_actions_container';
 
 class PlaylistTable extends React.Component {
@@ -8,9 +8,9 @@ class PlaylistTable extends React.Component {
     super(props);
 
     this.togglePlaylistFollow = this.togglePlaylistFollow.bind(this);
-    this.state = {songActionModal: false};
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
+    // this.state = {songActionModal: false};
+    // this.closeModal = this.closeModal.bind(this);
+    // this.openModal = this.openModal.bind(this);
   }
 
   togglePlaylistFollow(playlistId){
@@ -24,14 +24,14 @@ class PlaylistTable extends React.Component {
   componentWillMount(){
     this.setState({following: this.props.followed});
   }
+  //
+  // openModal(){
+  //   this.setState({songActionModal: true});
+  // }
 
-  openModal(){
-    this.setState({songActionModal: true});
-  }
-
-  closeModal(){
-    this.setState({songActionModal: false});
-  }
+  // closeModal(){
+  //   this.setState({songActionModal: false});
+  // }
 
   render(){
     let divStyle = {
@@ -49,18 +49,11 @@ class PlaylistTable extends React.Component {
         <td>{song.title}</td>
         <td>{song.artist}</td>
         <td>{song.album}</td>
-        <td className='playlist-table-song-actions' onClick={this.openModal}>
+        <td className='playlist-table-song-actions'>
           <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478656649/ellipsis_szfcs8.png'></img>
-          <Modal isOpen={this.state.songActionModal}
-                onRequestClose={this.closeModal}
-                style={songActionModalStyle}>
-            <SongActionsContainer />
-          </Modal>
+          <SongActionsContainer />
         </td>
         <td>{song.song_duration}</td>
-        <td>
-
-        </td>
       </tr>
     ));
 
@@ -99,5 +92,11 @@ class PlaylistTable extends React.Component {
     );
   }
 }
+
+// <Modal isOpen={this.state.songActionModal}
+//       onRequestClose={this.closeModal}
+//       style={songActionModalStyle}>
+//   <SongActionsContainer />
+// </Modal>
 
 export default PlaylistTable;

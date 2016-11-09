@@ -21,6 +21,20 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def follow
+    @user_follow = UserFollow.new({follower_id: params[:follower_id], followee_id: params[:id]})
+
+    @user_follow.save
+    render 'api/users/static'
+  end
+
+  def unfollow
+    @user_follow = UserFollow.find_by_follower_id_and_followee_id(params[:follower_id], params[:id])
+
+    @user_follow.destroy
+    render 'api/users/static'
+  end
+
   private
   def user_params
     params.require(:user).permit([:username, :password])

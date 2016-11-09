@@ -17,7 +17,32 @@
 }
 
 .user-profile-details {
-  height: 200px;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #222326;
+}
+
+.user-profile-picture {
+  height: 125px;
+  width: 125px;
+  border-radius: 63px;
+}
+
+.user-profile-name {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.user-profile-name span {
+  color: #696A6D;
+  font-size: 100%;
+}
+
+.user-profile-name h1 {
+  font-size: 300%;
 }
 /*.user-profile-header {
   display: flex;

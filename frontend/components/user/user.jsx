@@ -12,6 +12,11 @@ class User extends React.Component{
       backgroundPosition: `50%`,
     };
 
+    let followButton;
+    if(!(this.props.user.id === this.props.currentUser.id)){
+      followButton = <button>Follow</button>;
+    }
+
     return (
       <div className='user-profile'>
         <div className='user-profile-container'>
@@ -21,7 +26,8 @@ class User extends React.Component{
             </div>
             <div className='user-profile-name'>
               <span>User</span>
-              <span>{this.props.user.username}</span>
+              <h1>{this.props.user.username}</h1>
+              {followButton}
             </div>
           </div>
 
