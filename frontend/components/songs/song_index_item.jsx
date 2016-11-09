@@ -35,10 +35,10 @@ class SongIndexItem extends React.Component{
     let playSongImageUrl;
     if(this.props.currentSong.id && this.props.currentSong.id === this.props.song.id){
       playSongImageUrl =
-      'http://res.cloudinary.com/djv7nouxz/image/upload/v1478395090/pause_button_jjepd0.png';
+      'https://res.cloudinary.com/djv7nouxz/image/upload/v1478395090/pause_button_jjepd0.png';
     } else {
       playSongImageUrl =
-      'http://res.cloudinary.com/djv7nouxz/image/upload/v1478395268/play_button_xe3rjt.png';
+      'https://res.cloudinary.com/djv7nouxz/image/upload/v1478395268/play_button_xe3rjt.png';
     }
     
     return (
@@ -52,7 +52,7 @@ class SongIndexItem extends React.Component{
             </div>
             <div className='add-song-to-queue'
               onClick={this.handleClickAdd(this.props.song)}>
-              <img src='http://res.cloudinary.com/djv7nouxz/image/upload/v1478395302/add_button_i2nll4.png'></img>
+              <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478395302/add_button_i2nll4.png'></img>
             </div>
           </div>
         </div>

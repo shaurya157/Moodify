@@ -21,7 +21,7 @@ class Sidebar extends React.Component {
     return (
     <div className='sidebar'>
       <div className='logo' onClick={this.redirectToBrowse}>
-        <img src={'http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478417702/logo_tscdje.png'}></img>
+        <img src={'https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478417702/logo_tscdje.png'}></img>
       </div>
 
       <ul>
@@ -33,7 +33,7 @@ class Sidebar extends React.Component {
         </li>
         <li>
           <div className='sidebar-item' onClick={this.redirectToBrowse}>
-            <img src={'http://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478417702/headphone_logo_cpvqvw.png'}></img>
+            <img src={'https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478417702/headphone_logo_cpvqvw.png'}></img>
             <p>Browse</p>
           </div>
         </li>

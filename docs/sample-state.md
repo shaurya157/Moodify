@@ -19,8 +19,8 @@
       userId: 3,
       description: "description",
       album: "Lorem",
-      coverUrl: "http://path/to/cover",
-      audioUrl: "http://path/to/audio",
+      coverUrl: "https://path/to/cover",
+      audioUrl: "https://path/to/audio",
       duration: "4:04"
     }
     songQueue: [song1, song2, song3],
@@ -36,7 +36,7 @@
         userId: 3,
         description: "description",
         follows: true,
-        coverUrl: "http:/path/to/cover",
+        coverUrl: "https:/path/to/cover",
       }
     },
 
@@ -52,8 +52,8 @@
             id: 1,
             title: "Redux",
             description: "description",
-            coverUrl: "http://path/to/cover",
-            audioUrl: "http://path/to/audio",
+            coverUrl: "https://path/to/cover",
+            audioUrl: "https://path/to/audio",
             duration: "4:40",
             album: "Lorem"
           }
@@ -68,7 +68,7 @@
           username: "username",
           bio: "bio",
           follows: true
-          profileImageUrl: "http:/path/to/cover"
+          profileImageUrl: "https:/path/to/cover"
         }
     },
     //viewing a single user page (includes index of that user's playlists)
@@ -79,7 +79,7 @@
           bio: "bio",
           user_id: 3,
           follows: true
-          profileImageUrl: "http:/path/to/cover"
+          profileImageUrl: "https:/path/to/cover"
       },
       playlists: {
         1: {
@@ -88,7 +88,7 @@
             userId: 3,
             follows: false
             description: "description",
-            coverUrl: "http:/path/to/cover"
+            coverUrl: "https:/path/to/cover"
         }
       }
     }
