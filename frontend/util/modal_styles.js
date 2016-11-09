@@ -75,20 +75,18 @@ export const playlistModalStyle = (playing) => {
 export const songActionModalStyle = {
   overlay : {
    position        : 'relative',
-   top             : '200px',
-   left            : '100px',
+   top             : 0,
+   left            : 0,
    right           : 0,
    bottom          : 0,
    zIndex          : 60
  },
  content : {
-   position        : 'fixed',
-   top             : '150px',
-   width           : '300px',
-   height          : '300px',
-   borderRadius    : '20px',
+   position        : 'absolute',
+   width           : '100px',
+   height          : '100px',
    padding         : 0,
    margin          : '0 auto',
-   zIndex          : 51
+   zIndex          : 60
  }
 };

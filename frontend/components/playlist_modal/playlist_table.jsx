@@ -1,16 +1,12 @@
 import React from 'react';
-// import Modal from 'react-modal';
-// import {songActionModalStyle} from '../../util/modal_styles';
 import SongActionsContainer from './song_actions_container';
+import {withRouter, Link} from 'react-router';
 
 class PlaylistTable extends React.Component {
   constructor(props){
     super(props);
 
     this.togglePlaylistFollow = this.togglePlaylistFollow.bind(this);
-    // this.state = {songActionModal: false};
-    // this.closeModal = this.closeModal.bind(this);
-    // this.openModal = this.openModal.bind(this);
   }
 
   togglePlaylistFollow(playlistId){
@@ -24,14 +20,12 @@ class PlaylistTable extends React.Component {
   componentWillMount(){
     this.setState({following: this.props.followed});
   }
-  //
-  // openModal(){
-  //   this.setState({songActionModal: true});
-  // }
 
-  // closeModal(){
-  //   this.setState({songActionModal: false});
-  // }
+  redirectToUser(id){
+    return () => {
+      this.props.router.push(`/app/users/${id}`);
+    };
+  }
 
   render(){
     let divStyle = {
@@ -50,7 +44,6 @@ class PlaylistTable extends React.Component {
         <td>{song.artist}</td>
         <td>{song.album}</td>
         <td className='playlist-table-song-actions'>
-          <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478656649/ellipsis_szfcs8.png'></img>
           <SongActionsContainer />
         </td>
         <td>{song.song_duration}</td>
@@ -71,7 +64,10 @@ class PlaylistTable extends React.Component {
           <span className='playlist-table-title'>{this.props.playlist.title}</span>
         </div>
         <div className='playlist-table-details'>
-          Created by <span className='to-highlight'>{this.props.playlist.username}</span>
+          Created by <span className='to-highlight'
+                      onClick={this.redirectToUser(this.props.playlist.user_id)}>
+          {this.props.playlist.username}
+        </span>
 
           {followButton}
           <button onClick={this.props.playPlaylist(this.props.playlist) } className='play-button'>Play</button>
@@ -93,10 +89,5 @@ class PlaylistTable extends React.Component {
   }
 }
 
-// <Modal isOpen={this.state.songActionModal}
-//       onRequestClose={this.closeModal}
-//       style={songActionModalStyle}>
-//   <SongActionsContainer />
-// </Modal>
 
-export default PlaylistTable;
+export default withRouter(PlaylistTable);
