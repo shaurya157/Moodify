@@ -6,11 +6,12 @@ Rails.application.routes.draw do
 
     resources :playlists, only: [:index, :show, :create] do
       member do
-        get 'follow'
+        post 'follow'
         delete 'unfollow'
+        post 'add_song'
+        delete 'remove_song'
       end
     end
-    resources :playlistfollows, only: [:create, :destroy]
   end
 
   root to: 'static_pages#root'
