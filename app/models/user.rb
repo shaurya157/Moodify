@@ -12,13 +12,6 @@ class User < ActiveRecord::Base
 
   has_many :user_follows,
     primary_key: :id,
-    foreign_key: :follower_id,
-    class_name: :UserFollow
-
-  has_many :followees, through: :user_follows, source: :followee
-
-  has_many :user_followed_bys,
-    primary_key: :id,
     foreign_key: :followee_id,
     class_name: :UserFollow
 
