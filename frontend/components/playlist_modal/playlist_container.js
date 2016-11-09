@@ -9,7 +9,7 @@ import {requestPlaylist,
 
 const mapStateToProps = (state) => ({
   playlist: state.playlists.currPlaylist,
-  playing: document.getElementsByClassName('player-not-playing').length === 0,
+  playing: state.currentSong.playing,
   currentUser: state.session.currentUser,
   followedPlaylists: state.playlists.followedPlaylists
 });

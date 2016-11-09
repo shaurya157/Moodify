@@ -109,3 +109,11 @@ button:hover {
   color: #8B0000;
   background-color: white;
 }
+
+th {
+  height: 25px;
+}
+
+td {
+  height: 20px;
+}
