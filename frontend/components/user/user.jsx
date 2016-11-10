@@ -1,4 +1,6 @@
 import React from 'react';
+import Masonry from 'react-masonry-component';
+import PlaylistIndexItemContainer from '../playlists/playlist_index_item_container';
 
 class User extends React.Component{
   constructor(props){
@@ -43,6 +45,13 @@ class User extends React.Component{
       }
     }
 
+    let followedPlaylists = this.props.user.followedPlaylists.map(el => (
+      <li key={el.id}>
+        <PlaylistIndexItemContainer
+          playlist={el}/>
+      </li>
+    ));
+
     return (
       <div className='user-profile'>
         <div className='user-profile-container'>
@@ -57,8 +66,12 @@ class User extends React.Component{
             </div>
           </div>
 
-          <div className='user-profile-playlists'>
 
+          <div className='user-profile-playlists'>
+            <Masonry
+              elementType={'ul'}>
+              {followedPlaylists}
+            </Masonry>
           </div>
         </div>
       </div>
