@@ -27,7 +27,6 @@ const PlaylistsReducer = (oldState = _defaultState, action) => {
       newState.currPlaylist = _defaultState.currPlaylist;
       return newState;
     case RECEIVE_USER_PLAYLISTS:
-    debugger;
       newState.followedPlaylists = action.followedPlaylists;
       newState.createdPlaylists = action.createdPlaylists;
       return newState;

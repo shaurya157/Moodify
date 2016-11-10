@@ -13,7 +13,8 @@ const mapStateToProps = (state) => ({
   playlist: state.playlists.currPlaylist,
   playing: state.currentSong.playing,
   currentUser: state.session.currentUser,
-  followedPlaylists: state.playlists.followedPlaylists
+  followedPlaylists: state.playlists.followedPlaylists,
+  createdPlaylists: state.playlists.createdPlaylists
 });
 
 const mapDispatchToProps = (dispatch) => ({
