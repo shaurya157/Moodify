@@ -14,8 +14,12 @@ class PlaylistIndexItem extends React.Component{
   }
 
   render(){
+    let imageUrl = this.props.playlist.playlist_image_url;
+    let indexOfUpload = imageUrl.indexOf('upload');
+    let croppedImageUrl = imageUrl.slice(0, indexOfUpload) + ('upload/h_250') + imageUrl.slice(indexOfUpload + 6, imageUrl.length);
+
     let divStyle = {
-      backgroundImage: `url(${this.props.playlist.playlist_image_url})`,
+      backgroundImage: `url(${croppedImageUrl})`,
       backgroundSize: `cover`,
       backgroundPosition: `50%`,
     };
