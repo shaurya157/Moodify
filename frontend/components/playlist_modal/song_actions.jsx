@@ -5,15 +5,21 @@ class SongActions extends React.Component{
     super(props);
   }
 
+  addSongToQueue(song){
+    return () => {
+      this.props.addSongToQueue(song);
+    };
+  }
+
   render(){
     return(
       <div className='song-actions-2'>
         <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'></img>
         <ul className='default-hidden'>
-          <li>
+          <li onClick={this.props.playSong(this.props.song)}>
             <span>Play</span>
           </li>
-          <li>
+          <li onClick={this.addSongToQueue(this.props.song)}>
             <span>Add to Play Queue</span>
           </li>
           <li>

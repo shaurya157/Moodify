@@ -8,7 +8,8 @@ import merge from 'lodash/merge';
 const _defaultState = {
   allPlaylists: [],
   currPlaylist: {songs: [], description: "", id: '', playlist_image_url:"", title:"", username:"" },
-  followedPlaylists: []
+  followedPlaylists: [],
+  createdPlaylists: []
 };
 
 const PlaylistsReducer = (oldState = _defaultState, action) => {

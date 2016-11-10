@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
 
     if params[:need_playlist]
-      render json: @user.followed_playlists
+      render 'api/users/playlists'
     else
       render :show_user
     end

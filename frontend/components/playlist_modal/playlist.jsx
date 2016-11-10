@@ -78,12 +78,12 @@ class Playlist extends React.Component {
            style={playlistModalStyle(this.state.playing)}
            className='playlist-modal'>
 
-           <PlaylistTable playlist={this.props.playlist}
+           <PlaylistTable
+             playlist={this.props.playlist}
              playPlaylist={this.playPlaylist}
              createPlaylistFollow={this.createPlaylistFollow}
              deletePlaylistFollow={this.deletePlaylistFollow}
              playSong={this.playSong}
-             addSongToPlaylist={this.props.addSongToPlaylist}
              followed={followed}/>
 
         </Modal>
