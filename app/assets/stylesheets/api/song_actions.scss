@@ -1,7 +1,23 @@
-// .default-hidden{
-//   position: absolute;
-//   background-color: #3E3E40;
-//   overflow-y: scroll;
-//   color: #95969B;
-//   font-size: 12px;
-// }
+.default-hidden{
+  position: absolute;
+  display: none;
+  background-color: #3E3E40;
+  overflow-y: scroll;
+  color: #95969B;
+  font-size: 12px;
+
+  &:hover {
+    display:block;
+  }
+}
+
+.song-actions-2:hover {
+  .default-hidden{
+    transition: 0.4s;
+    display: block;
+  }
+}
+
+.default-hidden{
+  padding: 10px;
+}
