@@ -14,6 +14,7 @@ class Api::PlaylistsController < ApplicationController
 
     if @playlist.valid?
       @playlist.save
+      render :show
     else
       render json: @playlist.errors.full_messages, status: 401
     end
@@ -49,6 +50,12 @@ class Api::PlaylistsController < ApplicationController
   def remove_song
     @playlist_song = PlaylistSong.find_by_song_id_and_playlist_id(params[:song_id], params[:id])
     @playlist_song.destroy
+    render 'api/playlists/playlist_show'
+  end
+
+  def destroy
+    @playlist = Playlist.find_by_id(params[:id])
+    @playlist.destroy
     render 'api/playlists/playlist_show'
   end
 
