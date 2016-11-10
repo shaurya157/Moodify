@@ -2,7 +2,7 @@ import {RECEIVE_ALL_PLAYLISTS,
         PLAY_PLAYLIST,
         RECEIVE_PLAYLIST,
         CLEAR_PLAYLIST,
-        RECEIVE_FOLLOWED_PLAYLISTS} from '../actions/playlist_actions';
+        RECEIVE_USER_PLAYLISTS} from '../actions/playlist_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
@@ -26,8 +26,10 @@ const PlaylistsReducer = (oldState = _defaultState, action) => {
     case CLEAR_PLAYLIST:
       newState.currPlaylist = _defaultState.currPlaylist;
       return newState;
-    case RECEIVE_FOLLOWED_PLAYLISTS:
-      newState.followedPlaylists = action.playlists;
+    case RECEIVE_USER_PLAYLISTS:
+    debugger;
+      newState.followedPlaylists = action.followedPlaylists;
+      newState.createdPlaylists = action.createdPlaylists;
       return newState;
     default:
       return oldState;
