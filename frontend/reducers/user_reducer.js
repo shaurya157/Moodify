@@ -2,7 +2,7 @@ import {RECEIVE_USER} from '../actions/user_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
-  user: {},
+  user: {followedPlaylists:[], createdPlaylists:[], id:"", bio:"", profile_image_url:""},
   allUsers: []
 };
 
