@@ -30,11 +30,13 @@ class PlayQueue extends React.Component {
     return(
       <div className='playqueue'>
         <table>
-          <tr>
-            <th>Title</th>
-            <th>Artist</th>
-          </tr>
-          {playqueue}
+          <tbody>
+              <tr>
+                <th>Title</th>
+                <th>Artist</th>
+              </tr>
+              {playqueue}
+          </tbody>
         </table>
       </div>
     );
