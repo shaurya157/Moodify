@@ -12,8 +12,6 @@
 .user-profile-container {
   width: 80%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .user-profile-details {
@@ -63,3 +61,25 @@
   height:100%;
   width: auto;
 }*/
+
+.followed-playlists {
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.created-playlists {
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.user-profile-playlists {
+  margin-top: 20px;
+}
+
+.followed-playlists-header, .created-playlists-header{
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #222326;
+  width: 100%;
+}

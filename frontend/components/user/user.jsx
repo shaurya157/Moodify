@@ -45,20 +45,24 @@ class User extends React.Component{
       }
     }
 
-    let followedPlaylists = this.props.user.followedPlaylists.map(el => (
+    let followedPlaylists = this.props.user.followedPlaylists.map(el =>(
       <li key={el.id}>
-        <PlaylistIndexItemContainer
-          playlist={el}/>
+        <PlaylistIndexItemContainer playlist={el}/>
+      </li>
+    ));
+
+    let createdPlaylists = this.props.user.createdPlaylists.map(el =>(
+      <li key={el.id}>
+        <PlaylistIndexItemContainer playlist={el}/>
       </li>
     ));
 
     return (
       <div className='user-profile'>
-        <div className='user-profile-container'>
+       <div className='user-profile-container'>
           <div className='user-profile-details'>
             <div className='user-profile-picture'
-              style={divStyle}>
-            </div>
+            style={divStyle}></div>
             <div className='user-profile-name'>
               <span>User</span>
               <h1>{this.props.user.username}</h1>
@@ -66,12 +70,22 @@ class User extends React.Component{
             </div>
           </div>
 
-
           <div className='user-profile-playlists'>
-            <Masonry
-              elementType={'ul'}>
-              {followedPlaylists}
-            </Masonry>
+            <div className='followed-playlists-header'>
+              Followed Playlists</div>
+            <Masonry className='followed-playlists'
+              elementType={'ul'}
+              options={{fitWidth: true, columnWidth: 250 }}>
+               {followedPlaylists}
+             </Masonry>
+
+             <div className='created-playlists-header'>
+               Created Playlists</div>
+             <Masonry className='created-playlists'
+               elementType={'ul'}
+               options={{fitWidth: true, columnWidth: 250 }}>
+                {createdPlaylists}
+              </Masonry>
           </div>
         </div>
       </div>
