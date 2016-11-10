@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
 import Playlist from './playlist';
-import {playPlaylist, playSong} from '../../actions/audio_actions';
+import {playPlaylist,
+        playSong,
+        addSongToQueue} from '../../actions/audio_actions';
 import {requestPlaylist,
         clearPlaylist,
         createPlaylistFollow,
@@ -20,8 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
   clearPlaylist: () => dispatch(clearPlaylist()),
   createPlaylistFollow: (userId, playlistId) => dispatch(createPlaylistFollow(userId, playlistId)),
   deletePlaylistFollow: (userId, playlistId) => dispatch(deletePlaylistFollow(userId, playlistId)),
-  playSong: (song) => dispatch(playSong(song)),
-  addSongToPlaylist: (songId, playlistId) => dispatch(addSongToPlaylist(songId, playlistId))
+  playSong: (song) => dispatch(playSong(song))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Playlist);

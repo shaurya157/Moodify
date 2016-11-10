@@ -4,8 +4,8 @@ export const REQUEST_PLAYLIST = 'REQUEST_PLAYLIST';
 export const RECEIVE_PLAYLIST = 'RECEIVE_PLAYLIST';
 export const CLEAR_PLAYLIST = 'CLEAR_PLAYLIST';
 export const CREATE_PLAYLIST_FOLLOW = 'CREATE_PLAYLIST_FOLLOW';
-export const REQUEST_FOLLOWED_PLAYLISTS = 'REQUEST_FOLLOWED_PLAYLISTS';
-export const RECEIVE_FOLLOWED_PLAYLISTS = 'RECEIVE_FOLLOWED_PLAYLISTS';
+export const REQUEST_USER_PLAYLISTS = 'REQUEST_USER_PLAYLISTS';
+export const RECEIVE_USER_PLAYLISTS = 'RECEIVE_USER_PLAYLISTS';
 export const DELETE_PLAYLIST_FOLLOW = 'DELETE_PLAYLIST_FOLLOW';
 export const ADD_SONG_TO_PLAYLIST = 'ADD_SONG_TO_PLAYLIST';
 export const DELETE_SONG_FROM_PLAYLIST = 'DELETE_SONG_FROM_PLAYLIST';
@@ -40,12 +40,12 @@ export const createPlaylistFollow = (userId, playlistId) => ({
 });
 
 export const requestFollowedPlaylists = (userId) => ({
-  type: REQUEST_FOLLOWED_PLAYLISTS,
+  type: REQUEST_USER_PLAYLISTS,
   userId
 });
 
 export const receiveFollowedPlaylists = (playlists) => ({
-  type: RECEIVE_FOLLOWED_PLAYLISTS,
+  type: RECEIVE_USER_PLAYLISTS,
   playlists
 });
 

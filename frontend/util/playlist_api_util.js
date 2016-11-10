@@ -14,7 +14,7 @@ export const fetchPlaylist = (id, success) => {
   });
 };
 
-export const fetchUserFollowedPlaylists = (userId, success) => {
+export const fetchUserPlaylists = (userId, success) => {
   $.ajax({
     method: 'GET',
     url: `api/users/${userId}`,

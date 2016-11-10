@@ -44,7 +44,9 @@ class PlaylistTable extends React.Component {
         <td>{song.artist}</td>
         <td>{song.album}</td>
         <td className='playlist-table-song-actions'>
-          <SongActionsContainer />
+          <SongActionsContainer
+            song={song}
+            playSong={this.props.playSong}/>
         </td>
         <td>{song.song_duration}</td>
       </tr>
