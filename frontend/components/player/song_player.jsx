@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-// import Playbar from './playbar';
 
 class SongPlayer extends React.Component {
   constructor(props){
@@ -38,6 +37,12 @@ class SongPlayer extends React.Component {
   }
 
   render () {
+    let playLogo;
+    if(this.props.playing){
+      playLogo = <img src='http://res.cloudinary.com/djv7nouxz/image/upload/h_100/v1478808785/pause_1_zdynia.png'></img>;
+    } else {
+      playLogo = <img src='https://res.cloudinary.com/djv7nouxz/image/upload/h_100/v1478412042/play_button_zl1jcp.png'></img>;
+    }
     return (
       <div className='song-player'>
         <ReactPlayer
@@ -57,13 +62,13 @@ class SongPlayer extends React.Component {
 
         <div className='song-controls'>
           <div onClick={this.startPreviousSong} className='playqueue-previous'>
-            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478412309/previous_button_dteyd7.png'></img>
+            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/h_100/v1478412309/previous_button_dteyd7.png'></img>
           </div>
           <div onClick={this.togglePlay} className='playqueue-resume'>
-            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478412042/play_button_zl1jcp.png'></img>
+            {playLogo}
           </div>
           <div onClick={this.startNextSong} className='playqueue-next'>
-            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478412310/next_button_zzezii.png'></img>
+            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/h_100/v1478412310/next_button_zzezii.png'></img>
           </div>
         </div>
       </div>
