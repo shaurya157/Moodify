@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :songs, only: [:index]
 
-    resources :playlists, only: [:index, :show, :create] do
+    resources :playlists, only: [:index, :show, :create, :destroy] do
       member do
         post 'follow'
         delete 'unfollow'

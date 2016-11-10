@@ -9,6 +9,9 @@ export const RECEIVE_USER_PLAYLISTS = 'RECEIVE_USER_PLAYLISTS';
 export const DELETE_PLAYLIST_FOLLOW = 'DELETE_PLAYLIST_FOLLOW';
 export const ADD_SONG_TO_PLAYLIST = 'ADD_SONG_TO_PLAYLIST';
 export const DELETE_SONG_FROM_PLAYLIST = 'DELETE_SONG_FROM_PLAYLIST';
+export const CREATE_PLAYLIST = 'CREATE_PLAYLIST';
+export const DELETE_PLAYLIST = 'DELETE_PLAYLIST';
+
 
 export const requestAllPlaylists = () => ({
   type: REQUEST_ALL_PLAYLISTS
@@ -67,4 +70,14 @@ export const deleteSongFromPlaylist = (songId, playlistId) => ({
   type: DELETE_SONG_FROM_PLAYLIST,
   songId,
   playlistId
+});
+
+export const deletePlaylist = (playlistId) => ({
+  type: DELETE_PLAYLIST,
+  playlistId
+});
+
+export const createPlaylist = (playlist) => ({
+  type: CREATE_PLAYLIST,
+  playlist
 });

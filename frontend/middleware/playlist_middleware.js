@@ -8,7 +8,9 @@ import {receiveAllPlaylists,
         receiveUserPlaylists,
         requestUserPlaylists,
         ADD_SONG_TO_PLAYLIST,
-        DELETE_SONG_FROM_PLAYLIST} from '../actions/playlist_actions';
+        DELETE_SONG_FROM_PLAYLIST,
+        CREATE_PLAYLIST,
+        DELETE_PLAYLIST} from '../actions/playlist_actions';
 
 import {fetchPlaylists,
         fetchPlaylist,
@@ -16,7 +18,9 @@ import {fetchPlaylists,
         fetchUserPlaylists,
         deletePlaylistFollow,
         addSongToPlaylist,
-        deleteSongFromPlaylist} from '../util/playlist_api_util';
+        deleteSongFromPlaylist,
+        deletePlaylist,
+        createPlaylist} from '../util/playlist_api_util';
 
 const PlaylistsMiddleware = ({dispatch}) => next => action => {
   const receiveAllPlaylistsSuccess = (playlists) => dispatch(receiveAllPlaylists(playlists));
@@ -46,6 +50,12 @@ const PlaylistsMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case DELETE_SONG_FROM_PLAYLIST:
       deleteSongFromPlaylist(action.songId, action.playlistId);
+      return next(action);
+    case CREATE_PLAYLIST:
+      createPlaylist(action.playlist);
+      return next(action);
+    case DELETE_PLAYLIST:
+      deletePlaylist(action.playlistId);
       return next(action);
     default:
       return next(action);

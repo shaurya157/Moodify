@@ -54,3 +54,18 @@ export const deleteSongFromPlaylist = (songId, playlistId) => {
   data: {song_id: songId}
   });
 };
+
+export const createPlaylist = (playlist) => {
+  $.ajax({
+    method: 'POST',
+    url: 'api/playlists',
+    data: {playlist}
+  });
+};
+
+export const deletePlaylist = (playlistId) => {
+  $.ajax({
+    method: 'DELETE',
+    url: `api/playlists/${playlistId}`
+  });
+};
