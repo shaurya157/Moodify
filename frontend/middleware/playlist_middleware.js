@@ -3,17 +3,17 @@ import {receiveAllPlaylists,
         REQUEST_PLAYLIST,
         receivePlaylist,
         CREATE_PLAYLIST_FOLLOW,
-        REQUEST_FOLLOWED_PLAYLISTS,
+        REQUEST_USER_PLAYLISTS,
         DELETE_PLAYLIST_FOLLOW,
-        receiveFollowedPlaylists,
-        requestFollowedPlaylists,
+        receiveUserPlaylists,
+        requestUserPlaylists,
         ADD_SONG_TO_PLAYLIST,
         DELETE_SONG_FROM_PLAYLIST} from '../actions/playlist_actions';
 
 import {fetchPlaylists,
         fetchPlaylist,
         createPlaylistFollow,
-        fetchUserFollowedPlaylists,
+        fetchUserPlaylists,
         deletePlaylistFollow,
         addSongToPlaylist,
         deleteSongFromPlaylist} from '../util/playlist_api_util';
@@ -21,7 +21,7 @@ import {fetchPlaylists,
 const PlaylistsMiddleware = ({dispatch}) => next => action => {
   const receiveAllPlaylistsSuccess = (playlists) => dispatch(receiveAllPlaylists(playlists));
   const receivePlaylistSuccess = (playlist) => dispatch(receivePlaylist(playlist));
-  const receiveFollowedPlaylistsSuccess = (playlists) => dispatch(receiveFollowedPlaylists(playlists));
+  const receiveUserPlaylistsSuccess = (playlists) => dispatch(receiveUserPlaylists(playlists));
 
   switch (action.type) {
     case REQUEST_ALL_PLAYLISTS:
@@ -32,14 +32,14 @@ const PlaylistsMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case CREATE_PLAYLIST_FOLLOW:
       createPlaylistFollow(action.userId, action.playlistId);
-      dispatch(requestFollowedPlaylists(action.userId));
+      dispatch(requestUserPlaylists(action.userId));
       return next(action);
     case DELETE_PLAYLIST_FOLLOW:
       deletePlaylistFollow(action.userId, action.playlistId);
-      dispatch(requestFollowedPlaylists(action.userId));
+      dispatch(requestUserPlaylists(action.userId));
       return next(action);
-    case REQUEST_FOLLOWED_PLAYLISTS:
-      fetchUserFollowedPlaylists(action.userId, receiveFollowedPlaylistsSuccess);
+    case REQUEST_USER_PLAYLISTS:
+      fetchUserPlaylists(action.userId, receiveUserPlaylistsSuccess);
       return next(action);
     case ADD_SONG_TO_PLAYLIST:
       addSongToPlaylist(action.songId, action.playlistId);

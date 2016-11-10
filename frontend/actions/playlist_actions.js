@@ -39,16 +39,18 @@ export const createPlaylistFollow = (userId, playlistId) => ({
   playlistId
 });
 
-export const requestFollowedPlaylists = (userId) => ({
+export const requestUserPlaylists = (userId) => ({
   type: REQUEST_USER_PLAYLISTS,
   userId
 });
+// formerly requestFollowedPlaylists
 
-export const receiveFollowedPlaylists = (playlists) => ({
+export const receiveUserPlaylists = (playlists) => ({
   type: RECEIVE_USER_PLAYLISTS,
-  playlists
+  followedPlaylists: playlists.followed_playlists,
+  createdPlaylists: playlists.created_playlists
 });
-
+// formerly receiveFollowedPlaylists
 export const deletePlaylistFollow = (userId, playlistId) => ({
   type: DELETE_PLAYLIST_FOLLOW,
   userId,

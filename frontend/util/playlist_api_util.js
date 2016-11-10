@@ -18,11 +18,11 @@ export const fetchUserPlaylists = (userId, success) => {
   $.ajax({
     method: 'GET',
     url: `api/users/${userId}`,
-    data: {userId: userId, need_playlist: true},
+    data: {need_playlist: true},
     success
   });
 };
-
+// changed line 21 to not give useId
 export const createPlaylistFollow = (userId, playlistId) => {
   $.ajax({
   method: 'POST',
