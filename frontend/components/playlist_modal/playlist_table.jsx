@@ -75,16 +75,18 @@ class PlaylistTable extends React.Component {
           <button onClick={this.props.playPlaylist(this.props.playlist) } className='play-button'>Play</button>
         </div>
         <table>
-          <tr>
-            <th className='table-header-playsong'></th>
-            <th>#</th>
-            <th>TITLE</th>
-            <th>ARTIST</th>
-            <th>ALBUM</th>
-            <th></th>
-            <th>DURATION</th>
-          </tr>
-          {songs}
+          <tbody>
+            <tr>
+              <th className='table-header-playsong'></th>
+              <th>#</th>
+              <th>TITLE</th>
+              <th>ARTIST</th>
+              <th>ALBUM</th>
+              <th></th>
+              <th>DURATION</th>
+            </tr>
+            {songs}
+          </tbody>
         </table>
       </div>
     );
