@@ -117,3 +117,7 @@ th {
 td {
   height: 20px;
 }
+
+.to-hide {
+  display: none;
+}

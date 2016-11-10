@@ -37,12 +37,17 @@ class User extends React.Component{
     }
 
     let followButton;
+    let createNewPlaylist;
     if(!(this.props.user.id === this.props.currentUser.id)){
       if(followed){
         followButton = <button onClick={this.toggleFollow(followed)}>Unfollow</button>;
       } else {
         followButton = <button onClick={this.toggleFollow(followed)}>Follow</button>;
       }
+    } else {
+      createNewPlaylist = <li key={1000}>
+        <PlaylistIndexItemContainer newPlaylist={true}/>
+      </li>;
     }
 
     let followedPlaylists = this.props.user.followedPlaylists.map(el =>(
