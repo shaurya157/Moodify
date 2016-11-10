@@ -52,7 +52,7 @@ const PlaylistsMiddleware = ({dispatch}) => next => action => {
       deleteSongFromPlaylist(action.songId, action.playlistId);
       return next(action);
     case CREATE_PLAYLIST:
-      createPlaylist(action.playlist);
+      createPlaylist(action.playlist, receivePlaylistSuccess);
       return next(action);
     case DELETE_PLAYLIST:
       deletePlaylist(action.playlistId);
