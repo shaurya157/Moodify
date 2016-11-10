@@ -10,7 +10,7 @@ class SongIndexItem extends React.Component{
   handleClickPlay (song){
     return (event) => {
       event.preventDefault();
-      if(this.props.playing && this.props.song.id === song.id){
+      if(this.props.playing && this.props.currentSong.id === song.id){
         this.props.pauseSong();
       } else {
         this.props.playSong(song);
@@ -33,14 +33,16 @@ class SongIndexItem extends React.Component{
     };
 
     let playSongImageUrl;
-    if(this.props.currentSong.id && this.props.currentSong.id === this.props.song.id){
+    if(this.props.currentSong.id &&
+       this.props.currentSong.id === this.props.song.id &&
+       this.props.playing){
       playSongImageUrl =
       'https://res.cloudinary.com/djv7nouxz/image/upload/v1478395090/pause_button_jjepd0.png';
     } else {
       playSongImageUrl =
       'https://res.cloudinary.com/djv7nouxz/image/upload/v1478395268/play_button_xe3rjt.png';
     }
-    
+
     return (
       <div className='song-index-item'>
         <div className='song-index-item-image'
