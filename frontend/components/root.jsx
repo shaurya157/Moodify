@@ -27,7 +27,6 @@ const Root = ({ store }) => {
         <Route path='/app' component={ AppContainer } onEnter={_requireLogin}>
           <Route path='/app/playlist/:playlistId' component={ PlaylistContainer }/>
           <Route path='/app/users/:userId' component={UserContainer} onEnter={_updateUsers}>
-            <Route path='/app/users/:playlistId' component={ PlaylistContainer }/>
           </Route>
         </Route>
       </Router>

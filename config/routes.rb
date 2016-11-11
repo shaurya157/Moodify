@@ -17,6 +17,8 @@ Rails.application.routes.draw do
         delete 'remove_song'
       end
     end
+
+    resources :search, only: [:index]
   end
 
   root to: 'static_pages#root'
