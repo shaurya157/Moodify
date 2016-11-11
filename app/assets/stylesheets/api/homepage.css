@@ -14,11 +14,12 @@
 
  .footer {
    display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: #8B0000;
-   min-height: 100px;
-   width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #8B0000;
+  min-height: 100px;
+  width: 100%;
+  justify-content: space-around;
  }
 
   .overlay {
@@ -77,4 +78,18 @@ button{
 
 .introduction2 {
   color: white;
+}
+
+.introduction2 {
+  font-size: 16px;
+}
+
+.introduction2 small{
+  font-size: 25px;
+  color: green;
+}
+
+.introduction2 span {
+  font-size: 25px;
+  color:  #8B0000;
 }
