@@ -32,7 +32,6 @@
   padding: 25px;
   border-collapse: collapse;
   margin: 0 auto;
-  min-height: 300px;
   font-size: 14px;
   border-spacing: 0;
 }
@@ -48,6 +47,7 @@ th {
 
 .playlist-table tr {
   border-bottom: 1px solid #222326;
+  line-height: 35px;
 }
 
 td {

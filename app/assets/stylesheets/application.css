@@ -117,3 +117,7 @@ th {
 td {
   height: 20px;
 }
+
+tr{
+  line-height: 40px;
+}

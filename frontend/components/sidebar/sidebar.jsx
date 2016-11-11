@@ -49,7 +49,7 @@ class Sidebar extends React.Component {
 
         <li>
           <div className='sidebar-item' onClick={this.redirectToBrowse}>
-            <img src={'https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478417702/headphone_logo_cpvqvw.png'}></img>
+            <img src={'http://res.cloudinary.com/djv7nouxz/image/upload/v1478899326/headphones_1_a5kmem.png'}></img>
             <p>Browse</p>
           </div>
         </li>
