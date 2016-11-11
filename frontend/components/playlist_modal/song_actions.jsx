@@ -100,7 +100,8 @@ class SongActions extends React.Component{
         </div>
       );
     } else {
-      return (<div className='song-actions-2' onMouseLeave={this.resetView}>
+      return (
+        <div className='song-actions-2' onMouseLeave={this.resetView}>
         <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'
           className='song-actions-back-button'></img>
         <ul className='default-hidden-2'>

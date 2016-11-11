@@ -5,6 +5,7 @@
   color: #95969B;
   font-size: 12px;
   width: 200px;
+  min-height: 100px;
   &:hover {
     display:block;
   }
@@ -39,9 +40,14 @@
   max-height: 300px;
 }
 
-// .create-playlist-form{
-//   height: 200px;
-// }
+.create-playlist-form{
+  height: 100%;
+}
+
+.createPlaylist button {
+  height: 50px;
+  width: 100%;
+}
 
 .default-hidden-2{
   position: absolute;
@@ -58,8 +64,9 @@
 .back-button-form {
   background-color: #2E2F33;
   display: flex;
-  justify-content: space-between;
-  justify-content: flex-start;
+  // justify-content: space-between;
+  // justify-content: flex-start;
+  float: left;
 }
 
 .default-hidden-2 li{
