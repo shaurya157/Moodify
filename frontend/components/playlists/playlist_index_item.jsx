@@ -8,12 +8,8 @@ class PlaylistIndexItem extends React.Component{
 
   handleClick(id){
     return (event) => {
-      if(this.props.newPlaylist){
-        console.log('working!');
-      } else {
-        event.preventDefault();
-        this.props.router.push(`/app/playlist/${id}`);
-      }
+      event.preventDefault();
+      this.props.router.push(`/app/playlist/${id}`);
     };
   }
 

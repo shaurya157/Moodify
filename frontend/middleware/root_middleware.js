@@ -3,12 +3,14 @@ import SessionMiddleware from './session_middleware';
 import SongsMiddleware from './song_middleware';
 import PlaylistsMiddleware from './playlist_middleware';
 import UserMiddleware from './user_middleware';
+import SearchMiddleware from './search_middleware';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
   SongsMiddleware,
   PlaylistsMiddleware,
-  UserMiddleware
+  UserMiddleware,
+  SearchMiddleware
 );
 
 export default RootMiddleware;

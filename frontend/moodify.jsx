@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import {deletePlaylist, createPlaylist} from './actions/playlist_actions';
-import {logout} from './actions/session_actions';
+import {requestSearch} from './actions/search_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
@@ -14,9 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  window.logout = logout;
-  window.createPlaylist = createPlaylist;
-  window.deletePlaylist = deletePlaylist;
+  window.requestSearch = requestSearch;
   window.store = store;
   ReactDOM.render(<Root store={store} />, root);
 });

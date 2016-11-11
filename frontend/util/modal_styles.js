@@ -72,21 +72,26 @@ export const playlistModalStyle = (playing) => {
  }
 };
 
-export const songActionModalStyle = {
-  overlay : {
-   position        : 'relative',
-   top             : 0,
-   left            : 0,
-   right           : 0,
-   bottom          : 0,
-   zIndex          : 60
- },
- content : {
-   position        : 'absolute',
-   width           : '100px',
-   height          : '100px',
-   padding         : 0,
-   margin          : '0 auto',
-   zIndex          : 60
- }
+export const searchModalStyle = {
+    overlay : {
+     position        : 'fixed',
+     top             : 0,
+     left            : '100px',
+     right           : 0,
+     bottom          : 0,
+     backgroundColor : 'rgba(17, 18, 20, 0.75)',
+     zIndex          : 100
+   },
+   content : {
+     position        : 'relative',
+     top             : 0,
+     right           : 0,
+     bottom          : 0,
+     left            : '-6px',
+     borderRadius    : '0px',
+     width           : '250px',
+     height          : '100%',
+     backgroundColor : 'rgba(34, 35, 38, 0.75)',
+     zIndex          : 101
+   }
 };
