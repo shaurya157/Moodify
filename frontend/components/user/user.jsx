@@ -27,8 +27,6 @@ class User extends React.Component{
     this.props.logout();
   }
 
-
-
   render(){
     let divStyle = {
       backgroundImage: `url(${this.props.user.profile_image_url})`,
