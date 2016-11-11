@@ -6,19 +6,19 @@ Heroku: https://moodify-app.herokuapp.com/
 
 Moodify is an audio-streaming web application inspired by Spotify: built with a React/Redux front-end and powered by a Rails backend.  By the end of Week 9, this app will, at a minimum, support the following functionality with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Playlist creation, deletion, and updating
-- [ ] Following playlists
-- [ ] Continuous audio streaming while navigating the site
-- [ ] Following other users
-- [ ] Production README
+- [x] Hosting on Heroku
+- [x] New account creation, login, and guest/demo login
+- [x] Playlist creation, deletion, and updating
+- [x] Following playlists
+- [x] Continuous audio streaming while navigating the site
+- [x] Following other users
+- [x] Production README
 
 Some bonus features that Moodify may also include:
 
-- [ ] Searching for users, playlists and songs all in one place
+- [x] Searching for users, playlists and songs all in one place
 - [ ] Radio option for random music streaming
-- [ ] Play Queue
+- [x] Play Queue
 - [ ] Radio option looks at the music you like and serves you music based on your likes
 - [ ] Music being filtered by Genres
 - [ ] Search suggestions using elastic search to cheapen the cost of making database queries

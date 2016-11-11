@@ -74,7 +74,8 @@ class Splash extends React.Component {
             {buttons}
           </div>
           <div className='introduction2'>
-            Add cool info about app here
+            <p>A <small>playlist</small> for every <span>mood</span>. A <span>song</span> for every <small>emotion</small>.</p>
+
           </div>
         </div>
 
