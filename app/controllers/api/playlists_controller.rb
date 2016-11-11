@@ -15,7 +15,6 @@ class Api::PlaylistsController < ApplicationController
     if @playlist.valid?
       @playlist.save
       p = PlaylistSong.new({playlist_id: @playlist.id, song_id: params[:song_id]})
-      debugger
       p.save
       render :show
     else

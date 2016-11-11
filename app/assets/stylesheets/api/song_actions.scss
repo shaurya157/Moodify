@@ -2,12 +2,9 @@
   position: absolute;
   display: none;
   background-color: #3E3E40;
-  overflow-y: scroll;
   color: #95969B;
-  font-size: 14px;
-  height: 150px;
-  width: 150px;
-  margin: 0 auto;
+  font-size: 12px;
+  width: 200px;
   &:hover {
     display:block;
   }
@@ -15,7 +12,6 @@
 
 .song-actions-2:hover {
   .default-hidden{
-    transition: all 2s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,12 +21,47 @@
 
 .default-hidden li {
   cursor: pointer;
+  height: 30px;
+  display: flex;
+  align-items: center;
   &:hover{
     background-color: #87888B;
   }
 }
 
+.default-hidden li span {
+  margin-left: 20px;
+
+}
+
 .default-hidden ul {
+  background-color: #3e3e40;
+  max-height: 300px;
+}
+
+// .create-playlist-form{
+//   height: 200px;
+// }
+
+.default-hidden-2{
+  position: absolute;
+  height: 150px;
+  background-color: #3E3E40;
+  color: #95969B;
+  font-size: 12px;
+  width: 200px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+
+.back-button-form {
+  background-color: #2E2F33;
+  display: flex;
+  justify-content: space-between;
+  justify-content: flex-start;
+}
+
+.default-hidden-2 li{
+  cursor: pointer;
 }

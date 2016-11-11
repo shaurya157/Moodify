@@ -7,7 +7,8 @@ import {requestPlaylist,
         clearPlaylist,
         createPlaylistFollow,
         deletePlaylistFollow,
-        addSongToPlaylist} from '../../actions/playlist_actions';
+        addSongToPlaylist,
+        requestAllPlaylists} from '../../actions/playlist_actions';
 
 const mapStateToProps = (state) => ({
   playlist: state.playlists.currPlaylist,
@@ -23,7 +24,8 @@ const mapDispatchToProps = (dispatch) => ({
   clearPlaylist: () => dispatch(clearPlaylist()),
   createPlaylistFollow: (userId, playlistId) => dispatch(createPlaylistFollow(userId, playlistId)),
   deletePlaylistFollow: (userId, playlistId) => dispatch(deletePlaylistFollow(userId, playlistId)),
-  playSong: (song) => dispatch(playSong(song))
+  playSong: (song) => dispatch(playSong(song)),
+  requestAllPlaylists: () => dispatch(requestAllPlaylists())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Playlist);
