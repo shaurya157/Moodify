@@ -38,37 +38,38 @@
 .default-hidden ul {
   background-color: #3e3e40;
   max-height: 300px;
+  overflow-y: scroll;
 }
 
-.create-playlist-form{
-  height: 100%;
-}
+// .create-playlist-form{
+//   height: 100%;
+//   width: 100%;
+// }
 
-.createPlaylist button {
+.create-playlist-form button {
   height: 50px;
   width: 100%;
 }
 
-.default-hidden-2{
-  position: absolute;
-  height: 150px;
-  background-color: #3E3E40;
-  color: #95969B;
-  font-size: 12px;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+
 
 .back-button-form {
   background-color: #2E2F33;
   display: flex;
-  // justify-content: space-between;
-  // justify-content: flex-start;
-  float: left;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
-.default-hidden-2 li{
+.back-button-form img {
+  flex: 1;
+  width: 20px;
+  height: auto;
+}
+
+.back-button-form span {
+  flex: 3;
+}
+
+.default-hidden li{
   cursor: pointer;
 }
