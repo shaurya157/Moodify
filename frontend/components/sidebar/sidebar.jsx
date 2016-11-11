@@ -20,8 +20,10 @@ class Sidebar extends React.Component {
   }
 
   closeModal(){
+    this.props.clearSearch();
     this.setState({searchModal: false});
   }
+
   redirectToBrowse(){
     this.props.router.push('/app');
   }
@@ -61,7 +63,7 @@ class Sidebar extends React.Component {
       <Modal isOpen={this.state.searchModal}
          onRequestClose={this.closeModal}
          style={searchModalStyle}>
-         <SearchContainer />
+         <SearchContainer closeModal={this.closeModal}/>
       </Modal>
     </div>);
   }

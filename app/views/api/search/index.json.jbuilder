@@ -1,6 +1,6 @@
 json.songs do
   json.array! @songs do |song|
-    json.extract! song, :title, :artist, :album, :song_image_url, :audio_url
+    json.extract! song, :title, :artist, :album, :song_image_url, :audio_url, :id
   end
 end
 
@@ -12,6 +12,6 @@ end
 
 json.users do
   json.array! @users do |user|
-    json.extract! user, :username, :profile_image_url
+    json.extract! user, :username, :profile_image_url, :id
   end
 end

@@ -1,3 +1,18 @@
 // Place all the styles related to the api/search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+input.search-bar{
+  width: 100%;
+}
+
+.search-bar{
+  height: 40px;
+display: flex;
+align-items: center;
+width: 100%;
+}
+
+.search li {
+  cursor: pointer;
+}
