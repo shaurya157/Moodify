@@ -4,11 +4,15 @@ class SongActions extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {phase: 1};
+    this.state = {phase: 1, title: ""};
     this.addSongsView = this.addSongsView.bind(this);
     this.removeSongsView = this.removeSongsView.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addSongToPlaylist = this.addSongToPlaylist.bind(this);
+    this.addCreatePlaylistView = this.addCreatePlaylistView.bind(this);
+    this.removeCreatePlaylistView = this.removeCreatePlaylistView.bind(this);
+    this.resetView = this.resetView.bind(this);
+    this.updateForm = this.updateForm.bind(this);
   }
 
   addSongToQueue(song){
@@ -22,22 +26,35 @@ class SongActions extends React.Component{
   }
 
   removeSongsView(){
-    console.log('removing');
     this.setState({phase: 1});
   }
 
-  handleSubmit(){
-    return(event) => {
-      event.preventDefault();
-      debugger;
-      this.props.createPlaylist({title: event.target.value});
-    };
+  addCreatePlaylistView(){
+    this.setState({phase: 3});
+  }
+
+  removeCreatePlaylistView(){
+    this.setState({phase: 2});
+  }
+
+  resetView(){
+    this.setState({phase: 1});
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    this.props.createPlaylist({title: this.state.title, user_id: this.props.currentUser.id}, this.props.song.id);
   }
 
   addSongToPlaylist(songId, playlistId){
     return() => {
       this.props.addSongToPlaylist(songId, playlistId);
     };
+  }
+
+  updateForm(event){
+      event.preventDefault();
+      this.setState({title: event.target.value});
   }
 
   render(){
@@ -65,22 +82,35 @@ class SongActions extends React.Component{
         </li>
       ));
       return (
-        <div className='song-actions-2'>
+        <div className='song-actions-2' onMouseLeave={this.resetView}>
           <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'></img>
-          <ul className='default-hidden' onMouseLeave={this.removeSongView}>
+          <ul className='default-hidden' >
             <li onClick={this.removeSongsView}>
-              <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_10/v1478755394/left-arrow_arqkps.png'></img>
+              <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478755394/left-arrow_arqkps.png'></img>
             </li>
-            <li>
-              <form onSubmit={this.handleSubmit}>
-                <input type='text' placeholder='Create new playlist'></input>
-                <button type='submit' className='to-hide'></button>
-              </form>
+            <li onClick={this.addCreatePlaylistView}>
+              <span>Create new playlist</span>
             </li>
             {playlists}
           </ul>
         </div>
       );
+    } else {
+      return (<div className='song-actions-2' onMouseLeave={this.resetView}>
+        <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'></img>
+        <ul className='default-hidden'>
+          <li onClick={this.removeCreatePlaylistView}>
+            <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478755394/left-arrow_arqkps.png'></img>
+          </li>
+          <li>
+            <form onSubmit={this.handleSubmit}>
+              <input type='text' placeholder='Name'
+                onChange={this.updateForm} />
+              <button type='submit' value='Submit'>Create Playlist</button>
+            </form>
+          </li>
+        </ul>
+      </div>);
     }
   }
 }

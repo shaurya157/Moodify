@@ -4,6 +4,7 @@ import { receiveCurrentUser,
          LOGOUT,
          SIGNUP
        } from '../actions/session_actions';
+import {hashHistory} from 'react-router';
 import { login, signup, logout } from '../util/session_api_util';
 
 const SessionMiddleware = ({dispatch}) => next => action => {
@@ -16,7 +17,10 @@ const SessionMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case LOGOUT:
       error = () => alert('There was a problem logging out');
-      success = () => next(action);
+      success = () => {
+        next(action);
+        hashHistory.push('/');
+      };
       logout(success, error);
       break;
     case SIGNUP:

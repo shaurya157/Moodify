@@ -55,11 +55,11 @@ export const deleteSongFromPlaylist = (songId, playlistId) => {
   });
 };
 
-export const createPlaylist = (playlist, success) => {
+export const createPlaylist = (playlist, songId, success) => {
   $.ajax({
     method: 'POST',
     url: 'api/playlists',
-    data: {playlist},
+    data: {playlist, song_id: songId},
     success
   });
 };

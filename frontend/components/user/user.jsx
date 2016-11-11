@@ -1,12 +1,14 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
 import PlaylistIndexItemContainer from '../playlists/playlist_index_item_container';
+import {withRouter} from 'react-router';
 
 class User extends React.Component{
   constructor(props){
     super(props);
 
     this.toggleFollow = this.toggleFollow.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   toggleFollow(followed){
@@ -20,6 +22,12 @@ class User extends React.Component{
       }
     };
   }
+
+  logout(){
+    this.props.logout();
+  }
+
+
 
   render(){
     let divStyle = {
@@ -36,18 +44,15 @@ class User extends React.Component{
       followed = false;
     }
 
-    let followButton;
-    let createNewPlaylist;
+    let followOrLogoutButton;
     if(!(this.props.user.id === this.props.currentUser.id)){
       if(followed){
-        followButton = <button onClick={this.toggleFollow(followed)}>Unfollow</button>;
+        followOrLogoutButton = <button onClick={this.toggleFollow(followed)}>Unfollow</button>;
       } else {
-        followButton = <button onClick={this.toggleFollow(followed)}>Follow</button>;
+        followOrLogoutButton = <button onClick={this.toggleFollow(followed)}>Follow</button>;
       }
     } else {
-      createNewPlaylist = <li key={1000}>
-        <PlaylistIndexItemContainer newPlaylist={true}/>
-      </li>;
+      followOrLogoutButton = <button onClick={this.logout}>Logout</button>;
     }
 
     let followedPlaylists = this.props.user.followedPlaylists.map(el =>(
@@ -71,7 +76,7 @@ class User extends React.Component{
             <div className='user-profile-name'>
               <span>User</span>
               <h1>{this.props.user.username}</h1>
-              {followButton}
+              {followOrLogoutButton}
             </div>
           </div>
 
@@ -98,4 +103,4 @@ class User extends React.Component{
   }
 }
 
-export default User;
+export default withRouter(User);

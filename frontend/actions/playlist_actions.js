@@ -77,7 +77,8 @@ export const deletePlaylist = (playlistId) => ({
   playlistId
 });
 
-export const createPlaylist = (playlist) => ({
+export const createPlaylist = (playlist, songId) => ({
   type: CREATE_PLAYLIST,
-  playlist
+  playlist,
+  songId
 });

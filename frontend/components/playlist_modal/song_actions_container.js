@@ -5,13 +5,14 @@ import {addSongToQueue} from '../../actions/audio_actions';
 
 const mapStateToProps = state => ({
   followedPlaylists: state.playlists.followedPlaylists,
-  createdPlaylists: state.playlists.createdPlaylists
+  createdPlaylists: state.playlists.createdPlaylists,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
   addSongToPlaylist: (songId, playlistId) => dispatch(addSongToPlaylist(songId, playlistId)),
   addSongToQueue: (song) => dispatch(addSongToQueue(song)),
-  createPlaylist: (playlist) => dispatch(createPlaylist(playlist))
+  createPlaylist: (playlist,songId) => dispatch(createPlaylist(playlist, songId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongActions);

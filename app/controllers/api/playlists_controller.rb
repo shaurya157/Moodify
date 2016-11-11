@@ -14,9 +14,12 @@ class Api::PlaylistsController < ApplicationController
 
     if @playlist.valid?
       @playlist.save
+      p = PlaylistSong.new({playlist_id: @playlist.id, song_id: params[:song_id]})
+      debugger
+      p.save
       render :show
     else
-      render json: @playlist.errors.full_messages, status: 401
+      render json: @playlist.errors.full_messages, status: 404
     end
   end
 
@@ -61,6 +64,6 @@ class Api::PlaylistsController < ApplicationController
 
   private
   def playlist_params
-    params.require(:playlist).permit([:title, :description, :user_id, :playlist_image_url])
+    params.require(:playlist).permit([:title, :user_id, :playlist_image_url])
   end
 end

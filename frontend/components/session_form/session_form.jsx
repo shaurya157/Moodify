@@ -15,16 +15,6 @@ class SessionForm extends React.Component {
     }
   }
 
-  componentDidUpdate(){
-    this.redirectIfcurrentUser();
-  }
-
-  redirectIfcurrentUser(){
-    if(this.props.currentUser){
-      this.props.router.push('/');
-    }
-  }
-
   startUsernameAnimation(){
     this.clearFields();
 
