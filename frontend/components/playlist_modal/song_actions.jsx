@@ -61,7 +61,8 @@ class SongActions extends React.Component{
     if(this.state.phase === 1){
       return(
         <div className='song-actions-2'>
-          <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'></img>
+          <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'
+            className='song-actions-back-button'></img>
           <ul className='default-hidden'>
             <li onClick={this.props.playSong(this.props.song)}>
               <span>Play</span>
@@ -78,15 +79,17 @@ class SongActions extends React.Component{
       let playlists = this.props.createdPlaylists.map(el => (
         <li key={el.id}
             onClick={this.addSongToPlaylist(this.props.song.id, el.id)}>
-          {el.title}
+          <span>{el.title}</span>
         </li>
       ));
       return (
         <div className='song-actions-2' onMouseLeave={this.resetView}>
-          <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'></img>
+          <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'
+            className='song-actions-back-button'></img>
           <ul className='default-hidden' >
-            <li onClick={this.removeSongsView}>
+            <li onClick={this.removeSongsView} className='back-button-form'>
               <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478755394/left-arrow_arqkps.png'></img>
+              <span>Add to...</span>
             </li>
             <li onClick={this.addCreatePlaylistView}>
               <span>Create new playlist</span>
@@ -97,12 +100,14 @@ class SongActions extends React.Component{
       );
     } else {
       return (<div className='song-actions-2' onMouseLeave={this.resetView}>
-        <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'></img>
-        <ul className='default-hidden'>
-          <li onClick={this.removeCreatePlaylistView}>
+        <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'
+          className='song-actions-back-button'></img>
+        <ul className='default-hidden-2'>
+          <li onClick={this.removeCreatePlaylistView} className='back-button-form'>
             <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478755394/left-arrow_arqkps.png'></img>
+            <span>New playlist</span>
           </li>
-          <li>
+          <li className='create-playlist-form'>
             <form onSubmit={this.handleSubmit}>
               <input type='text' placeholder='Name'
                 onChange={this.updateForm} />

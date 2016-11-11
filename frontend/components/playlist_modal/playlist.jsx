@@ -59,6 +59,7 @@ class Playlist extends React.Component {
 
   closeModal(){
     this.props.clearPlaylist();
+    this.props.requestAllPlaylists();
     this.setState({playListModal: false});
     this.props.router.push('/app');
   }
