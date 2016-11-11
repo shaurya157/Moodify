@@ -18,7 +18,7 @@ The currently playing song, the play status (playing, paused, etc), and upcoming
 
 ![Moodify songs page: https://moodify-app.herokuapp.com/#/app][songs audio]
 
-###song uploading and editing
+###Song playback
 
 On the backend, songs are stored in a single table that records each song's `id`, `artist`, `title`, `song_image_url`, `audio_url`. The songs are indexed on user_id and category so different sets of songs can be quickly fetched via API calls based on where a user is in the app.
 
