@@ -1,5 +1,6 @@
 import React from 'react';
 import PlaylistIndexItemContainer from './playlist_index_item_container';
+import Masonry from 'react-masonry-component';
 
 class PlaylistIndex extends React.Component {
   constructor(props){
@@ -17,10 +18,12 @@ class PlaylistIndex extends React.Component {
     return (
       <div className='recommended-playlists'>
         <div className='recommended-playlists-header'>Recommended Playlists</div>
-        <div className='recommended-playlists-container'>
-          {playlists}
+          <Masonry className='recommended-playlists-container'
+            elementType={'ul'}
+            options={{fitWidth: true, columnWidth: 250 }}>
+             {playlists}
+           </Masonry>
         </div>
-      </div>
   );
   }
 }

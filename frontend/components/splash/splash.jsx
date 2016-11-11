@@ -53,7 +53,7 @@ class Splash extends React.Component {
   }
   render(){
     let buttons;
-    if(!this.props.currentUser){
+    if(!this.props.currentUser.id){
       buttons = (
         <div className='login-buttons'>
           <button onClick={this.openModal.bind(this, 'login', false)}>Login!</button>
@@ -69,7 +69,7 @@ class Splash extends React.Component {
       <main className='overlay-main'>
         <div className='overlay'>
           <div className='introduction'>
-            <img className='homepage' src={'http://res.cloudinary.com/djv7nouxz/image/upload/q_10/v1478417702/logo_tscdje.png'}></img>
+            <img className='homepage' src={'http://res.cloudinary.com/djv7nouxz/image/upload/v1478417702/logo_tscdje.png'}></img>
             <h1>Moodify</h1>
             {buttons}
           </div>

@@ -1,5 +1,5 @@
 class Playlist < ActiveRecord::Base
-  validates :title, :description, :user_id, :playlist_image_url, presence: true
+  validates :title, :user_id, :playlist_image_url, presence: true
 
   PLAYLIST_IMAGES = [
     'http://res.cloudinary.com/djv7nouxz/image/upload/v1478813928/uvRBqDAfQfaGPJiI6lVS_R0001899_htjkip.jpg',
