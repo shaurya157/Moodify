@@ -104,7 +104,7 @@ class SongActions extends React.Component{
         <div className='song-actions-2' onMouseLeave={this.resetView}>
         <img src='https://res.cloudinary.com/djv7nouxz/image/upload/q_50/v1478656649/ellipsis_szfcs8.png'
           className='song-actions-back-button'></img>
-        <ul className='default-hidden-2'>
+        <ul className='default-hidden'>
           <li onClick={this.removeCreatePlaylistView} className='back-button-form'>
             <img src='https://res.cloudinary.com/djv7nouxz/image/upload/v1478755394/left-arrow_arqkps.png'></img>
             <span>New playlist</span>
