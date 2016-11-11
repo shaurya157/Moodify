@@ -87,7 +87,7 @@ export const searchModalStyle = {
      top             : 0,
      right           : 0,
      bottom          : 0,
-     left            : '-6px',
+     left            : '-5px',
      borderRadius    : '0px',
      width           : '250px',
      height          : '100%',

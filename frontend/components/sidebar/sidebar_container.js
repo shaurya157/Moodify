@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Sidebar from './sidebar';
+import {clearSearch} from '../../actions/search_actions';
 
 
 const mapStateToProps = ({ session }) => ({
@@ -7,6 +8,7 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  clearSearch: () => dispatch(clearSearch())
 });
 
 export default connect(

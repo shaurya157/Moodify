@@ -1,4 +1,4 @@
-import {RECEIVE_SEARCH} from '../actions/search_actions';
+import {RECEIVE_SEARCH, CLEAR_SEARCH} from '../actions/search_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = {
@@ -18,6 +18,8 @@ const SearchReducer = (oldState = _defaultState, action) => {
       newState.playlists = action.playlists;
 
       return newState;
+    case CLEAR_SEARCH:
+      return _defaultState;
     default:
       return oldState;
   }
