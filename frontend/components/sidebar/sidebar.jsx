@@ -36,7 +36,7 @@ class Sidebar extends React.Component {
     return (
     <div className='sidebar'>
       <div className='logo' onClick={this.redirectToBrowse}>
-        <img src={'https://res.cloudinary.com/djv7nouxz/image/upload/v1478417702/logo_tscdje.png'}></img>
+        <img src={'http://res.cloudinary.com/djv7nouxz/image/upload/v1478885155/helm_logo6_fzqb63.png'}></img>
       </div>
 
       <ul>

@@ -10,6 +10,7 @@ class Search extends React.Component {
     this.playSong = this.playSong.bind(this);
     this.redirectToUser = this.redirectToUser.bind(this);
     this.redirectToPlaylist = this.redirectToPlaylist.bind(this);
+    this.divStyle = this.divStyle.bind(this);
   }
 
   handleChange(event){
@@ -46,57 +47,96 @@ class Search extends React.Component {
     };
   }
 
+  divStyle(url) {
+    let shortUrl = this.shortenedUrl(url);
+    return {
+      backgroundImage: `url(${shortUrl})`,
+      backgroundSize: `cover`,
+      backgroundPosition: `50%`,
+    };
+  }
+
   render(){
+    let showSongs, showPlaylists, showUsers;
+
     let songs =
     <ul>
       {this.props.search.songs.map(el => (
         <li key={el.id} onClick={this.playSong(el)}>
-          <div>
-            <img src={el.song_image_url}></img>
-            <div>
-              <span>{el.title}</span>
-              <span>{el.artist}</span>
-              <span>{el.album}</span>
-            </div>
+          <div style={this.divStyle(el.song_image_url)}
+            className='search-image'></div>
+          <div className='details'>
+            <span>{el.title}</span>
+            <span>{el.artist}</span>
+            <span>{el.album}</span>
           </div>
         </li>
       ))}
     </ul>;
 
+  if(this.props.search.songs.length > 0){
+    showSongs =
+    <div className='search-item'>
+      <span>Songs</span>
+      {songs}
+    </div>;
+  }
 
     let users =
     <ul>
       {this.props.search.users.map(el => {
         return (
           <li key={el.id} onClick={this.redirectToUser(el.id)}>
-            <img src={this.shortenedUrl(el.profile_image_url)}></img>
-            <span>{el.username}</span>
+            <div style={this.divStyle(el.profile_image_url)}
+              className='search-image'></div>
+            <div className='details'>
+              <span>{el.username}</span>
+            </div>
           </li>
         );
       })}
     </ul>;
 
+    if(this.props.search.users.length > 0){
+      showUsers =
+      <div className='search-item'>
+        <span>Users</span>
+        {users}
+      </div>;
+    }
 
     let playlists =
     <ul>
       {this.props.search.playlists.map(el => (
         <li key={el.id} onClick={this.redirectToPlaylist(el.id)}>
-          <img src={this.shortenedUrl(el.playlist_image_url)}></img>
-          <span>{el.title}</span>
+          <div style={this.divStyle(el.playlist_image_url)}
+            className='search-image'></div>
+          <span className='details'>
+            <span>{el.title}</span>
+          </span>
         </li>
       ))}
     </ul>;
 
+    if(this.props.search.playlists.length > 0){
+      showUsers =
+      <div className='search-item'>
+        <span>Playlists</span>
+        {playlists}
+      </div>;
+    }
+
     return (
       <div className='search'>
         <div className='search-bar'>
-          <input type='text' onChange={this.handleChange}>
+          <input type='text' onChange={this.handleChange}
+            placeholder='Search'>
           </input>
         </div>
 
-        {songs}
-        {users}
-        {playlists}
+        {showSongs}
+        {showPlaylists}
+        {showUsers}
       </div>
     );
   }

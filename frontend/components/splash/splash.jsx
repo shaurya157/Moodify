@@ -69,7 +69,7 @@ class Splash extends React.Component {
       <main className='overlay-main'>
         <div className='overlay'>
           <div className='introduction'>
-            <img className='homepage' src={'http://res.cloudinary.com/djv7nouxz/image/upload/v1478417702/logo_tscdje.png'}></img>
+            <img className='homepage' src={'http://res.cloudinary.com/djv7nouxz/image/upload/v1478885155/helm_logo6_fzqb63.png'}></img>
             <h1>Moodify</h1>
             {buttons}
           </div>
