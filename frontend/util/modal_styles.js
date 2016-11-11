@@ -80,7 +80,7 @@ export const searchModalStyle = {
      right           : 0,
      bottom          : 0,
      backgroundColor : 'rgba(17, 18, 20, 0.75)',
-     zIndex          : 100
+     zIndex          : 100,
    },
    content : {
      position        : 'relative',
@@ -88,10 +88,10 @@ export const searchModalStyle = {
      right           : 0,
      bottom          : 0,
      left            : '-5px',
-     borderRadius    : '0px',
      width           : '250px',
      height          : '100%',
-     backgroundColor : 'rgba(34, 35, 38, 0.75)',
-     zIndex          : 101
+     backgroundColor : 'rgba(34, 35, 38, 1)',
+     zIndex          : 101,
+     border          : null
    }
 };

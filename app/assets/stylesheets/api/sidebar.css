@@ -6,6 +6,9 @@
   left: 0;
   width: 100px;
   background-color: #1c1c1f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .user-profile-sidebar {
@@ -13,12 +16,12 @@
 }
 
 .logo {
-  height: 95px;
-  width: 159%;
-  top: 22px;
-  position: relative;
-  right: 28px;
-  cursor: pointer;
+  /* height: 95px; */
+width: 113%;
+top: 4px;
+position: relative;
+right: 7px;
+cursor: pointer;
 }
 
 .sidebar ul {

@@ -44,6 +44,7 @@ class SongActions extends React.Component{
   handleSubmit(event){
     event.preventDefault();
     this.props.createPlaylist({title: this.state.title, user_id: this.props.currentUser.id}, this.props.song.id);
+    this.props.requestUserPlaylists(this.props.currentUser.id);
   }
 
   addSongToPlaylist(songId, playlistId){
