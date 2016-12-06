@@ -4,7 +4,7 @@
 
 Moodify is a full-stack web application that lets users play songs, create, play and share their favorite playlists. Inspired by Spotify, it is built on a Rails backend with a PostgreSQL database, and it uses React.js with a Redux architectural framework on the frontend.  
 
-![Moodify home page: https://moodify-app.herokuapp.com/#/][home]
+[Moodify home page: https://moodify-app.herokuapp.com/#/][home]
 
 ## Features & Implementation
 
