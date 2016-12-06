@@ -13,6 +13,7 @@
 
 .user-profile-sidebar {
   bottom: 0;
+  cursor: pointer;
 }
 
 .logo {

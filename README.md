@@ -82,7 +82,7 @@ This would of course require storing additional information, like song location 
 The Spotify desktop app allows one to look at what their friends are listening to. This is a component on their home page that gets automatically updated when someone starts listening to a song.
 
 [prodlink]: https://moodifyapp.com/#/
-[home page]: ./docs/images/home.png "Moodify home page"
+[home page]: ./docs/images/homepage.png "Moodify home page"
 [songs audio]: ./docs/images/songs.png "Speehify audio player"
 [playlist detail]: ./docs/images/playlist.png "Playlist detail page"
 [user follows]: ./docs/images/user.png "User page"
