@@ -4,7 +4,7 @@
 
 Moodify is a full-stack web application that lets users play songs, create, play and share their favorite playlists. Inspired by Spotify, it is built on a Rails backend with a PostgreSQL database, and it uses React.js with a Redux architectural framework on the frontend.  
 
-[Moodify home page: https://moodify-app.herokuapp.com/#/][home]
+![Moodify home page: https://moodifyapp.com/#/][home page]
 
 ## Features & Implementation
 
@@ -16,7 +16,7 @@ Audio playback is controlled on the frontend via an `Player` React component, wh
 
 The currently playing song, the play status (playing, paused, etc), and upcoming / recently played songs are stored in the Redux store.
 
-![Moodify songs page: https://moodify-app.herokuapp.com/#/app][songs audio]
+![Moodify songs page: https://moodifyapp.com/#/app][songs audio]
 
 ###Song playback
 
@@ -30,7 +30,7 @@ Users can organize songs into playlists. Playlists are stored in a playlist tabl
 
 On the frontend, users can see Playlists in a `PlaylistIndexItem`, which shows a playlist's name and user and the Playlist's songs. Clicking on a `PlaylistIndexItemContainer` opens a modal with all the songs in the playlist, from which the user can play the playlist, follow it and create their own playlist, adding sonds from the playlist.
 
-![Moodify songs page: http://www.Moodify.stream/#/app/][playlist detail]
+![Moodify songs page: http://www.moodifyapp.com/#/app/playlist/2][playlist detail]
 
 ###Following users and playlists
 
@@ -40,13 +40,13 @@ On the backend, these follows are handled by UserFollows and PlaylistFollows joi
 
 Custom API calls are made when users click 'follow' and 'unfollow' links on the frontend that create and destroy these follow associations.
 
-![Moodify songs page: http://www.Moodify.stream/#/app/][user follows]
+![Moodify songs page: http://www.moodifyapp.com/#/app/users/1][user follows]
 
 ###Search
 
 Users can search for songs and playlists by using the search bar in the header. Calls to a custom search API are made dynamically as a user types in a search query. The API finds and returns songs and playlists and users with the `title`/`artist`/`username` that match the user's search query.
 
-![Moodify songs page: http://www.Moodify.stream/][search]
+![Moodify songs page: https://moodifyapp.com/#/app][search]
 
 ###User Experience
 
@@ -81,7 +81,7 @@ This would of course require storing additional information, like song location 
 
 The Spotify desktop app allows one to look at what their friends are listening to. This is a component on their home page that gets automatically updated when someone starts listening to a song.
 
-[prodlink]: https://moodify-app.herokuapp.com/#/
+[prodlink]: https://moodifyapp.com/#/
 [home page]: ./docs/images/home.png "Moodify home page"
 [songs audio]: ./docs/images/songs.png "Speehify audio player"
 [playlist detail]: ./docs/images/playlist.png "Playlist detail page"
