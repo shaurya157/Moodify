@@ -4,7 +4,7 @@
 
 Moodify is a full-stack web application that lets users play songs, create, play and share their favorite playlists. Inspired by Spotify, it is built on a Rails backend with a PostgreSQL database, and it uses React.js with a Redux architectural framework on the frontend.  
 
-![Moodify home page: https://moodifyapp.com/#/][home page]
+![Moodify home page: http://moodifyapp.com/#/][home page]
 
 ## Features & Implementation
 
@@ -16,7 +16,7 @@ Audio playback is controlled on the frontend via an `Player` React component, wh
 
 The currently playing song, the play status (playing, paused, etc), and upcoming / recently played songs are stored in the Redux store.
 
-![Moodify songs page: https://moodifyapp.com/#/app][songs audio]
+![Moodify songs page: http://moodifyapp.com/#/app][songs audio]
 
 ###Song playback
 
@@ -46,7 +46,7 @@ Custom API calls are made when users click 'follow' and 'unfollow' links on the 
 
 Users can search for songs and playlists by using the search bar in the header. Calls to a custom search API are made dynamically as a user types in a search query. The API finds and returns songs and playlists and users with the `title`/`artist`/`username` that match the user's search query.
 
-![Moodify songs page: https://moodifyapp.com/#/app][search]
+![Moodify songs page: http://moodifyapp.com/#/app][search]
 
 ###User Experience
 
@@ -81,7 +81,7 @@ This would of course require storing additional information, like song location 
 
 The Spotify desktop app allows one to look at what their friends are listening to. This is a component on their home page that gets automatically updated when someone starts listening to a song.
 
-[prodlink]: https://moodifyapp.com/#/
+[prodlink]: http://moodifyapp.com/#/
 [home page]: ./docs/images/homepage.png "Moodify home page"
 [songs audio]: ./docs/images/songs.png "Speehify audio player"
 [playlist detail]: ./docs/images/playlist.png "Playlist detail page"
